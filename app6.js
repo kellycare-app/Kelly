@@ -54,4 +54,4 @@ A.healthCat = ({ k }) => {
     list = S.weights.map(w => `<div class="ev"><div class="e">⚖️</div><div class="b"><b>${w.weight_kg} kg</b><div class="sub">${fmtDateFull(w.measured_at)} · ${esc(who(w.created_by))}${w.notes ? ' · ' + esc(w.notes) : ''}</div></div><button class="del" data-a="delRow" data-tb="weight_history" data-id="${w.id}">🗑</button></div>`).join('');
     addBtn = `<button class="btn" data-a="logWeight">＋ Nuovo peso</button>`;
   } else if (k === 'vaccine') {
-    list = S.vaccs.map(v => `<div class="ev"><div class="e">💉</div><div class="b"><b>${esc(v.name)}</b>
+    list = S.vaccs.map(v => `<div class="ev"><div class="e">💉</div><div class="b"><b>${esc(v.name)}</b><div class="sub">fatto: ${v.given_on ? fmtDateFull(v.given_on) : '—'}${v.next_due ?
