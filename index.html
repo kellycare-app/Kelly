@@ -3,47 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>App Calendario</title>
+  <title>Calendario</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <!-- Contenitore Principale Applicazione -->
   <div id="app" class="container">
-    
-    <!-- Intestazione / Header -->
     <header class="app-header">
       <h1>Il Mio Calendario</h1>
     </header>
-
-    <!-- Sezione Calendario -->
     <main class="calendar-container">
       <div id="calendar-controls" class="calendar-controls">
         <button type="button" id="btn-prev-month">&lt;</button>
         <h2 id="current-month-year">Settembre 2026</h2>
         <button type="button" id="btn-next-month">&gt;</button>
       </div>
-
-      <!-- Griglia dei Giorni della Settimana -->
       <div class="calendar-weekdays">
-        <div>Lun</div>
-        <div>Mar</div>
-        <div>Mer</div>
-        <div>Gio</div>
-        <div>Ven</div>
-        <div>Sab</div>
-        <div>Dom</div>
+        <div>Lun</div><div>Mar</div><div>Mer</div><div>Gio</div><div>Ven</div><div>Sab</div><div>Dom</div>
       </div>
-
-      <!-- Griglia Dinamica dei Giorni del Mese -->
-      <div id="calendar-days" class="calendar-grid">
-        <!-- I giorni verranno generati dinamicamente via JS -->
-      </div>
+      <div id="calendar-days" class="calendar-grid"></div>
     </main>
-
   </div>
 
-  <!-- Modale Generale Eventi -->
   <div id="modal-event" class="modal-overlay hidden">
     <div class="modal-card">
       <div class="modal-header">
@@ -52,18 +32,14 @@
       </div>
       <div class="modal-body">
         <input type="hidden" id="modal-date-val">
-        
         <label for="modal-input-title">Titolo / Descrizione</label>
         <input type="text" id="modal-input-title" placeholder="Es. Visita veterinaria, Spesa, ecc." class="input-field">
-        
         <label for="modal-input-cat">Categoria</label>
         <select id="modal-input-cat" class="input-field">
           <option value="generale">Generale</option>
           <option value="salute">Salute / Medico</option>
           <option value="promemoria">Promemoria</option>
         </select>
-
-        <!-- Contenitore Lista Eventi Esistenti -->
         <div id="modal-events-list" class="events-list-container"></div>
       </div>
       <div class="modal-footer">
@@ -73,7 +49,6 @@
     </div>
   </div>
 
-  <!-- Script JavaScript dell'Applicazione -->
   <script src="app.js"></script>
 </body>
 </html>
