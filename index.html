@@ -1,70 +1,79 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="utf-8">
-  <title>Kelly Care</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1">
-  <meta name="robots" content="noindex, nofollow, noarchive">
-  <meta name="theme-color" content="#FF8A3D">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-title" content="Kelly Care">
-  <link rel="manifest" href="manifest.webmanifest">
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;700;900&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>App Calendario</title>
   <link rel="stylesheet" href="style.css">
-
-  <script>
-    // Blocco di sicurezza per evitare l'errore "checkReminders is not defined"
-    if (typeof window.checkReminders !== 'function') {
-      window.checkReminders = function() {
-        console.log("checkReminders eseguita.");
-      };
-    }
-  </script>
 </head>
 <body>
 
-  <div id="app">
-    <div class="splash">
-      &#128054;<br>
-      <small>Kelly Care</small>
+  <!-- Contenitore Principale Applicazione -->
+  <div id="app" class="container">
+    
+    <!-- Intestazione / Header -->
+    <header class="app-header">
+      <h1>Il Mio Calendario</h1>
+    </header>
+
+    <!-- Sezione Calendario -->
+    <main class="calendar-container">
+      <div id="calendar-controls" class="calendar-controls">
+        <button type="button" id="btn-prev-month">&lt;</button>
+        <h2 id="current-month-year">Settembre 2026</h2>
+        <button type="button" id="btn-next-month">&gt;</button>
+      </div>
+
+      <!-- Griglia dei Giorni della Settimana -->
+      <div class="calendar-weekdays">
+        <div>Lun</div>
+        <div>Mar</div>
+        <div>Mer</div>
+        <div>Gio</div>
+        <div>Ven</div>
+        <div>Sab</div>
+        <div>Dom</div>
+      </div>
+
+      <!-- Griglia Dinamica dei Giorni del Mese -->
+      <div id="calendar-days" class="calendar-grid">
+        <!-- I giorni verranno generati dinamicamente via JS -->
+      </div>
+    </main>
+
+  </div>
+
+  <!-- Modale Generale Eventi -->
+  <div id="modal-event" class="modal-overlay hidden">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 id="modal-title">Nuovo Evento</h3>
+        <button type="button" class="btn-close" id="btn-modal-close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <input type="hidden" id="modal-date-val">
+        
+        <label for="modal-input-title">Titolo / Descrizione</label>
+        <input type="text" id="modal-input-title" placeholder="Es. Visita veterinaria, Spesa, ecc." class="input-field">
+        
+        <label for="modal-input-cat">Categoria</label>
+        <select id="modal-input-cat" class="input-field">
+          <option value="generale">Generale</option>
+          <option value="salute">Salute / Medico</option>
+          <option value="promemoria">Promemoria</option>
+        </select>
+
+        <!-- Contenitore Lista Eventi Esistenti -->
+        <div id="modal-events-list" class="events-list-container"></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn-secondary" id="btn-modal-cancel">Annulla</button>
+        <button type="button" class="btn-primary" id="btn-modal-save">Salva</button>
+      </div>
     </div>
   </div>
 
-  <nav id="nav" hidden>
-    <button data-a="nav" data-v="today">
-      <span>&#127968;</span>Oggi
-    </button>
-    <button data-a="nav" data-v="diary">
-      <span>&#128214;</span>Diario
-    </button>
-    <button data-a="nav" data-v="health">
-      <span>&#10084;&#65039;</span>Salute
-    </button>
-    <button data-a="nav" data-v="calendar">
-      <span>&#128197;</span>Calendario
-    </button>
-    <button data-a="nav" data-v="profile">
-      <span>&#128054;</span>Kelly
-    </button>
-  </nav>
-
-  <div id="overlay" hidden>
-    <div id="sheet" role="dialog"></div>
-  </div>
-
-  <div id="toast" hidden></div>
-
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
-
-  <script src="app1.js"></script>
-  <script src="app2.js"></script>
-  <script src="app3.js"></script>
-  <script src="app4.js"></script>
-  <script src="app5.js"></script>
-  <script src="app6.js"></script>
-  <script src="app7.js"></script>
-  <script src="app8.js"></script>
-
+  <!-- Script JavaScript dell'Applicazione -->
+  <script src="app.js"></script>
 </body>
 </html>
