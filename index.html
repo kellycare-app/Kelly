@@ -1,4 +1,4 @@
-  <!-- Esempio: Sezione Calendario (Sostituisci la scheda corrispondente) -->
+  <!-- Sezione Calendario (Scheda app-3) -->
   <div id="app-3" class="tab-content">
     <header class="app-header">
       <h1>Il Mio Calendario</h1>
@@ -9,6 +9,14 @@
         <h2 id="current-month-year">Settembre 2026</h2>
         <button type="button" id="btn-next-month">&gt;</button>
       </div>
+
+      <!-- Barra rapida inserimento evento -->
+      <div class="add-event-bar" style="display:flex; gap:6px; margin-bottom:12px;">
+        <input type="date" id="cal-date-input" class="input-field" style="flex:1;">
+        <input type="text" id="cal-title-input" placeholder="Nuovo evento..." class="input-field" style="flex:2;">
+        <button type="button" id="btn-add-event-quick" class="btn-primary" style="padding:0 14px; font-size:18px; font-weight:bold;">+</button>
+      </div>
+
       <div class="calendar-weekdays">
         <div>Lun</div><div>Mar</div><div>Mer</div><div>Gio</div><div>Ven</div><div>Sab</div><div>Dom</div>
       </div>
