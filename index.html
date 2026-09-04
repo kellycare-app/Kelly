@@ -1,13 +1,5 @@
-<!DOCTYPE html>
-<html lang="it">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Calendario</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div id="app" class="container">
+  <!-- Esempio: Sezione Calendario (Sostituisci la scheda corrispondente) -->
+  <div id="app-3" class="tab-content">
     <header class="app-header">
       <h1>Il Mio Calendario</h1>
     </header>
@@ -23,32 +15,3 @@
       <div id="calendar-days" class="calendar-grid"></div>
     </main>
   </div>
-
-  <div id="modal-event" class="modal-overlay hidden">
-    <div class="modal-card">
-      <div class="modal-header">
-        <h3 id="modal-title">Nuovo Evento</h3>
-        <button type="button" class="btn-close" id="btn-modal-close">&times;</button>
-      </div>
-      <div class="modal-body">
-        <input type="hidden" id="modal-date-val">
-        <label for="modal-input-title">Titolo / Descrizione</label>
-        <input type="text" id="modal-input-title" placeholder="Es. Visita veterinaria, Spesa, ecc." class="input-field">
-        <label for="modal-input-cat">Categoria</label>
-        <select id="modal-input-cat" class="input-field">
-          <option value="generale">Generale</option>
-          <option value="salute">Salute / Medico</option>
-          <option value="promemoria">Promemoria</option>
-        </select>
-        <div id="modal-events-list" class="events-list-container"></div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn-secondary" id="btn-modal-cancel">Annulla</button>
-        <button type="button" class="btn-primary" id="btn-modal-save">Salva</button>
-      </div>
-    </div>
-  </div>
-
-  <script src="app.js"></script>
-</body>
-</html>
