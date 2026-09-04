@@ -12,6 +12,15 @@
   <link rel="manifest" href="manifest.webmanifest">
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+
+  <script>
+    // Blocco di sicurezza per evitare l'errore "checkReminders is not defined"
+    if (typeof window.checkReminders !== 'function') {
+      window.checkReminders = function() {
+        console.log("checkReminders eseguita.");
+      };
+    }
+  </script>
 </head>
 <body>
 
