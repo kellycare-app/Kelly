@@ -1,5 +1,5 @@
 // Kelly Care 🐶 — service worker
-const CACHE = 'kelly-care-v2';
+const CACHE = 'kelly-care-v3';
 const SHELL = ['./', './index.html', './manifest.webmanifest'];
 
 self.addEventListener('install', e => {
