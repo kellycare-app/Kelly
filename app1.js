@@ -5,7 +5,8 @@ const CFG = (() => {
   const f = window.KELLY_CONFIG || {};
   const okFile = f.SUPABASE_URL && !f.SUPABASE_URL.includes('INSERISCI') && f.SUPABASE_ANON_KEY && !f.SUPABASE_ANON_KEY.includes('INSERISCI');
   if (okFile) return f;
-  try { const l = JSON.parse(localStorage.getItem('kc_config') || 'null'); if (l && l.SUPABASE_URL && l.SUPABASE_ANON_KEY) return l; } catch {}
+  try { const l =
+ JSON.parse(localStorage.getItem('kc_config') || 'null'); if (l && l.SUPABASE_URL && l.SUPABASE_ANON_KEY) return l; } catch {}
   return null;
 })();
 if (!CFG) {
@@ -139,3 +140,16 @@ function openSheet(title, html, onSubmit) {
   $('#sheet').innerHTML = `<div class="handle"></div><button class="close" data-a="closeSheet" aria-label="Chiudi">✕</button><h2>${title}</h2>${html}`;
   $('#overlay').hidden = false;
 }
+document.getElementById('btn-add-event-quick')?.addEventListener('click', () => {
+  const dateVal = document.getElementById('cal-date-input').value;
+  const titleVal = document.getElementById('cal-title-input').value.trim();
+
+  if (!dateVal || !titleVal) {
+    alert('Seleziona una data e inserisci un titolo');
+    return;
+  }
+
+  CalendarManager.addEvent(dateVal, titleVal, 'generale');
+  document.getElementById('cal-title-input').value = '';
+  renderCalendar();
+});
