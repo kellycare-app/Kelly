@@ -1,6 +1,5 @@
-// Kelly Care 🐶 — service worker (cache dell'app per apertura veloce e notifiche)
-const CACHE = 'kelly-care-v1';
-const SHELL = ['./', './index.html', './manifest.webmanifest'];
+const CACHE = 'kelly-care-v2';
+const SHELL = ['./', './index.html', './style.css', './app1.js', './app2.js', './app3.js', './manifest.webmanifest'];
 
 self.addEventListener('install', e => {
   e.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL)).then(() => self.skipWaiting()));
@@ -10,7 +9,7 @@ self.addEventListener('activate', e => {
 });
 self.addEventListener('fetch', e => {
   const url = new URL(e.request.url);
-  if (e.request.method !== 'GET' || url.origin !== location.origin) return; // Supabase e font: sempre rete
+  if (e.request.method !== 'GET' || url.origin !== location.origin) return;
   e.respondWith(
     fetch(e.request).then(r => { const copy = r.clone(); caches.open(CACHE).then(c => c.put(e.request, copy)); return r; })
       .catch(() => caches.match(e.request))
