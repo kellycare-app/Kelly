@@ -51,4 +51,8 @@ function renderHealth() {
     <button class="sos" data-a="sick">🚨 ${esc(dogName()).toUpperCase()} NON STA BENE</button>
     <div class="grid">${cards}</div>
     <div class="sec"><h2>Veterinario</h2><button class="btn ghost sm" data-a="editVet">＋ Aggiungi</button></div>
-    ${vets || '
+    ${vets || '<div class="empty"><span>🩺</span>Aggiungi il veterinario di fiducia e il pronto soccorso.</div>'}
+    <div class="sec"><h2>Documenti</h2><button class="btn ghost sm" data-a="addDoc">＋ Carica</button></div>
+    ${docs || '<div class="empty"><span>📁</span>Libretto, vaccini, analisi, ricette, referti…</div>'}`;
+}
+function docEmoji(d) { return { libretto: '📘', vaccini: '💉', analisi: '🧪', ricetta: '💊', referto: '📄', microchip: '🔖' }[d.category] || (d.mime && d.mime.startsWith('image') ? '🖼️' : '📎'); }
