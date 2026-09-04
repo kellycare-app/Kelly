@@ -287,3 +287,61 @@ function renderHealth() {
     `}
   `;
 }
+
+function renderCalendar() {
+  return `
+    <h1>Calendario 📅</h1>
+    <div class="empty">
+      <span>📅</span>
+      Pianificazione appuntamenti in arrivo.
+    </div>`;
+}
+
+function renderProfile() {
+  return `
+    <h1>Profilo 🐶</h1>
+    <div class="hero">
+      <button class="avatar" data-a="dogPhoto" aria-label="Cambia foto">
+        ${S.dogPhoto ? `<img src="${S.dogPhoto}" alt="">` : '🐶'}
+      </button>
+      <div>
+        <h1>${esc(dogName())}</h1>
+        <p class="muted">${esc(S.dog ? S.dog.breed || '' : '')}</p>
+      </div>
+    </div>
+    
+    <div class="sec">
+      <h2>Info ${esc(dogName())}</h2>
+      <button class="btn ghost sm" data-a="editDog">Modifica</button>
+    </div>
+    <div class="list">
+      <div class="task">
+        <div class="n"><b>Sesso:</b> ${S.dog && S.dog.sex === 'F' ? 'Femmina' : 'Maschio'}</div>
+      </div>
+      <div class="task">
+        <div class="n"><b>Peso:</b> ${S.dog && S.dog.weight_kg ? S.dog.weight_kg + ' kg' : 'Non specificato'}</div>
+      </div>
+      <div class="task">
+        <div class="n"><b>Cibo:</b> ${esc(S.dog && S.dog.food ? S.dog.food : 'Non specificato')}</div>
+      </div>
+    </div>
+
+    <div class="sec">
+      <h2>Account</h2>
+      <button class="btn ghost sm" data-a="editMe">Modifica nome</button>
+    </div>
+    <div class="list">
+      <div class="task">
+        <div class="n"><b>Nome:</b> ${esc(S.profile ? S.profile.display_name : 'Non impostato')}</div>
+      </div>
+    </div>
+
+    <div class="sec">
+      <h2>Notifiche & Impostazioni</h2>
+    </div>
+    <button class="btn sec" style="width:100%;margin-bottom:10px" data-a="enableNotif">🔔 Attiva Notifiche</button>
+    <button class="btn sec" style="width:100%;margin-bottom:10px" data-a="resetCfg">⚙️ Reimposta chiavi Supabase</button>
+    <button class="btn red" style="width:100%" data-a="logout">Esci</button>
+    <div style="height:70px"></div>
+  `;
+}
