@@ -1,25 +1,1100 @@
-  <!-- Sezione Calendario (Scheda app-3) -->
-  <div id="app-3" class="tab-content">
-    <header class="app-header">
-      <h1>Il Mio Calendario</h1>
-    </header>
-    <main class="calendar-container">
-      <div id="calendar-controls" class="calendar-controls">
-        <button type="button" id="btn-prev-month">&lt;</button>
-        <h2 id="current-month-year">Settembre 2026</h2>
-        <button type="button" id="btn-next-month">&gt;</button>
-      </div>
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<title>Kelly Care 🐶</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#FF8A3D">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Kelly Care">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAE9klEQVR4nO3dUXKbQBAA0Ukq14pvlUvEt8rFkh/jkhSwWNhdNNP9flM2YpkGLMvk29/fP/+GBPX96hcgXckAhGYAQjMAoRmA0AxAaAYgNAMQmgEIzQCEZgBCMwChGYDQDEBoBiA0AxCaAQjNAIRmAEIzAKEZgNAMQGgGIDQDEJoBCM0AhGYAQjMAoRmA0AxAaAYgNAMQmgEIzQCEZgBCMwChGYDQDEBoP65+ASX8+rP9b+9vebYB9M3/J/iEr4by0dEhnbENMAM4omUoH+0d0hnbkD8DNDszmHu/fsY2FBEG0KbXYH31fWZsQ58MYK/eA7X2/WZsQ3cMQGgGsMeoM+nt952xDf3Hd4GeqTJAvjO0yiuA0AzgK1XO/hG19qUjAxCaAQjNAIRmAFsq3jNX3KeTDEBoBiA0AxCaAQjNAIRmAEIzAKEZgNDqPxbl6ONE3t/q/eLo2Ueit/a38Eep6wbQ8sfnhQ/wU61/pF9srerdAv36037mPvI1FRzZ52LrVCsAHyeyz9ngC50w6gQw4nEilS73y770HNwCEdQIwMeJ7DNiv5KvVY0ARhp9FXh/m7MNrcofwIzHiYwaoNvvO3obI8/Uia8CuQMYvfCJD+ydGfuRdK1yBzBT7zP02vebsQ3dyRvArDPOiFuhZ7+BHr0NfcobwFXODtaer++5jZm3Jglvg+p+FGKkIz9Ytg71jG3IAE7ZM6S9zub+H2FD5Hw47hWX2oxDdtUtSaK18mcAoRmA0AxAaAYgNAMQmgEIzQCEZgBCyxnA7F+0JPrFzp0rXneytcoZgNSJAQjND8PNcPQzOT1uJ2Y+4S7Z7U9E5gBmHdjWgzr6sSMJh+yV5Q3glVz1RyfGcFrOj0PfGjl8Rx8mO9ueEEa/1qQx5g8gYszB3TqgrzL0W74axFGvPenwR/guUJtXH/6IHK/xhdS4AkT0PfCPZ7SsQ7V2Zu69L4nP/hGVAojoc3CveqLCSKOCTj78EdUCiDh3cCsO/6Ln1aDA4C/qBbA48ziRasO/6BFBoeGPqBzAovVxIlWHf3HkXaJiQ3+rfgAtqg//ovBAt/Jt0AVl+CNY+/qEAUQwB4K4zysMgDwI5H3/wA7AAcCvATcA+IG/A14LbgBSUAMAn/E2QdeEFwD0QO8CXBteANINVgDAM1wz2BqxApAeGIDQOAHALu2ngNaKE4C0wgCEZgBCYwQAuqftBrJmjACkDQYgNAMQmgEIzQCEZgBCMwChGYDQDEBojAB8FGA7yJoxApA2GIDQDEBonAAg97RdgNaKE4C0wgCExgoAdGk/DLZGrACkB7wAYGe4JsC14QUQgTzQT0HXhBmA9IEbAPSMtwq8FtwAItAH/hN8DdgBRLAHgLzvHwwggjkIxH1eYQAL0kCQ9vUJA7hFGAzCPjYwgEeVB6Tyvh1kAGsqDkrFferAALZUGphK+9LZj6tfwEtbBifro8Id/KcMYI9sITj4u3kL1CLDYGV4jS/EK0Cr2wF7lSuCQ3+YAZxx9a2Rg3+aAfQw86rg0HdlAL2tDejRKBz24QxgBgf5ZfkukNAMQGgGIDQDEJoBCM0AhGYAQjMAoRmA0AxAaAYgNAMQmgEIzQCEZgBCMwChGYDQDEBoBiA0AxCaAQjNAIRmAEIzAKEZgNAMQGgGIDQDEJoBCM0AhGYAQjMAoRmA0AxAaAYgNAMQmgEI7R9MGiFalJUaKAAAAABJRU5ErkJggg==">
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAE9klEQVR4nO3dUXKbQBAA0Ukq14pvlUvEt8rFkh/jkhSwWNhdNNP9flM2YpkGLMvk29/fP/+GBPX96hcgXckAhGYAQjMAoRmA0AxAaAYgNAMQmgEIzQCEZgBCMwChGYDQDEBoBiA0AxCaAQjNAIRmAEIzAKEZgNAMQGgGIDQDEJoBCM0AhGYAQjMAoRmA0AxAaAYgNAMQmgEIzQCEZgBCMwChGYDQDEBoP65+ASX8+rP9b+9vebYB9M3/J/iEr4by0dEhnbENMAM4omUoH+0d0hnbkD8DNDszmHu/fsY2FBEG0KbXYH31fWZsQ58MYK/eA7X2/WZsQ3cMQGgGsMeoM+nt952xDf3Hd4GeqTJAvjO0yiuA0AzgK1XO/hG19qUjAxCaAQjNAIRmAFsq3jNX3KeTDEBoBiA0AxCaAQjNAIRmAEIzAKEZgNDqPxbl6ONE3t/q/eLo2Ueit/a38Eep6wbQ8sfnhQ/wU61/pF9srerdAv36037mPvI1FRzZ52LrVCsAHyeyz9ngC50w6gQw4nEilS73y770HNwCEdQIwMeJ7DNiv5KvVY0ARhp9FXh/m7MNrcofwIzHiYwaoNvvO3obI8/Uia8CuQMYvfCJD+ydGfuRdK1yBzBT7zP02vebsQ3dyRvArDPOiFuhZ7+BHr0NfcobwFXODtaer++5jZm3Jglvg+p+FGKkIz9Ytg71jG3IAE7ZM6S9zub+H2FD5Hw47hWX2oxDdtUtSaK18mcAoRmA0AxAaAYgNAMQmgEIzQCEZgBCyxnA7F+0JPrFzp0rXneytcoZgNSJAQjND8PNcPQzOT1uJ2Y+4S7Z7U9E5gBmHdjWgzr6sSMJh+yV5Q3glVz1RyfGcFrOj0PfGjl8Rx8mO9ueEEa/1qQx5g8gYszB3TqgrzL0W74axFGvPenwR/guUJtXH/6IHK/xhdS4AkT0PfCPZ7SsQ7V2Zu69L4nP/hGVAojoc3CveqLCSKOCTj78EdUCiDh3cCsO/6Ln1aDA4C/qBbA48ziRasO/6BFBoeGPqBzAovVxIlWHf3HkXaJiQ3+rfgAtqg//ovBAt/Jt0AVl+CNY+/qEAUQwB4K4zysMgDwI5H3/wA7AAcCvATcA+IG/A14LbgBSUAMAn/E2QdeEFwD0QO8CXBteANINVgDAM1wz2BqxApAeGIDQOAHALu2ngNaKE4C0wgCEZgBCYwQAuqftBrJmjACkDQYgNAMQmgEIzQCEZgBCMwChGYDQDEBojAB8FGA7yJoxApA2GIDQDEBonAAg97RdgNaKE4C0wgCExgoAdGk/DLZGrACkB7wAYGe4JsC14QUQgTzQT0HXhBmA9IEbAPSMtwq8FtwAItAH/hN8DdgBRLAHgLzvHwwggjkIxH1eYQAL0kCQ9vUJA7hFGAzCPjYwgEeVB6Tyvh1kAGsqDkrFferAALZUGphK+9LZj6tfwEtbBifro8Id/KcMYI9sITj4u3kL1CLDYGV4jS/EK0Cr2wF7lSuCQ3+YAZxx9a2Rg3+aAfQw86rg0HdlAL2tDejRKBz24QxgBgf5ZfkukNAMQGgGIDQDEJoBCM0AhGYAQjMAoRmA0AxAaAYgNAMQmgEIzQCEZgBCMwChGYDQDEBoBiA0AxCaAQjNAIRmAEIzAKEZgNAMQGgGIDQDEJoBCM0AhGYAQjMAoRmA0AxAaAYgNAMQmgEI7R9MGiFalJUaKAAAAABJRU5ErkJggg==">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FFFDF8; --card:#FFFFFF; --ink:#26221D; --muted:#8B8378;
+  --orange:#FF8A3D; --orange-deep:#E8712A; --orange-soft:#FFF1E6;
+  --green:#2FA36B; --green-soft:#E6F6EE; --red:#E5484D; --red-soft:#FDEBEC;
+  --line:#F0E9DE; --blue:#4A7CFF; --blue-soft:#EAF0FF;
+  --r:22px; --r-s:14px;
+  --safe-b: env(safe-area-inset-bottom, 0px);
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;background:var(--bg);color:var(--ink);font-family:'Nunito',system-ui,-apple-system,sans-serif;font-size:17px;line-height:1.35;-webkit-font-smoothing:antialiased}
+body{padding-bottom:calc(84px + var(--safe-b))}
+button,input,select,textarea{font:inherit;color:inherit}
+button{border:0;background:none;cursor:pointer}
+img{display:block;max-width:100%}
+h1,h2,h3{margin:0;font-weight:900}
+h1{font-size:30px;letter-spacing:-.5px}
+h2{font-size:20px}
+h3{font-size:17px}
+p{margin:0}
+.muted{color:var(--muted)}
+.small{font-size:14px}
+.splash{display:flex;flex-direction:column;align-items:center;justify-content:center;height:80vh;font-size:72px;text-align:center}
+.splash small{font-size:20px;font-weight:900;color:var(--orange)}
 
-      <!-- Barra rapida inserimento evento -->
-      <div class="add-event-bar" style="display:flex; gap:6px; margin-bottom:12px;">
-        <input type="date" id="cal-date-input" class="input-field" style="flex:1;">
-        <input type="text" id="cal-title-input" placeholder="Nuovo evento..." class="input-field" style="flex:2;">
-        <button type="button" id="btn-add-event-quick" class="btn-primary" style="padding:0 14px; font-size:18px; font-weight:bold;">+</button>
-      </div>
+#app{padding:14px 16px 0;max-width:560px;margin:0 auto}
 
-      <div class="calendar-weekdays">
-        <div>Lun</div><div>Mar</div><div>Mer</div><div>Gio</div><div>Ven</div><div>Sab</div><div>Dom</div>
-      </div>
-      <div id="calendar-days" class="calendar-grid"></div>
-    </main>
-  </div>
+/* ---- header con foto ---- */
+.hero{display:flex;align-items:center;gap:14px;margin:6px 0 18px}
+.avatar{width:84px;height:84px;border-radius:50%;object-fit:cover;background:var(--orange-soft);display:flex;align-items:center;justify-content:center;font-size:42px;border:4px solid #fff;box-shadow:0 4px 14px rgba(255,138,61,.25);flex:none;overflow:hidden}
+.avatar img{width:100%;height:100%;object-fit:cover}
+.avatar.big{width:132px;height:132px;font-size:64px;margin:0 auto}
+.hero h1{line-height:1.1}
+
+/* ---- card ADESSO (l'unico elemento "forte") ---- */
+.now{background:var(--orange);color:#fff;border-radius:var(--r);padding:18px 18px 16px;margin-bottom:18px;box-shadow:0 10px 24px rgba(255,138,61,.35)}
+.now .lbl{font-size:14px;font-weight:700;opacity:.9}
+.now .what{font-size:26px;font-weight:900;margin:4px 0 12px;line-height:1.15}
+.now.done{background:var(--green);box-shadow:0 10px 24px rgba(47,163,107,.3)}
+.now.late{background:var(--red);box-shadow:0 10px 24px rgba(229,72,77,.3)}
+.now.walk{background:var(--blue);box-shadow:0 10px 24px rgba(74,124,255,.3)}
+.now .btn{background:#fff;color:var(--ink)}
+.timer{font-size:40px;font-weight:900;font-variant-numeric:tabular-nums;letter-spacing:1px}
+
+/* ---- pulsanti ---- */
+.btn{text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:52px;padding:0 20px;border-radius:16px;background:var(--orange);color:#fff;font-weight:900;font-size:17px;width:100%;transition:transform .08s}
+.btn:active{transform:scale(.97)}
+.btn.sec{background:var(--orange-soft);color:var(--orange-deep)}
+.btn.ghost{background:transparent;color:var(--muted);min-height:44px}
+.btn.green{background:var(--green)}
+.btn.red{background:var(--red)}
+.btn.blue{background:var(--blue)}
+.btn.sm{min-height:40px;font-size:15px;padding:0 14px;width:auto;border-radius:12px}
+.btn:disabled{opacity:.5}
+.row{display:flex;gap:10px;align-items:center}
+.row > *{flex:1}
+
+/* ---- lista routine ---- */
+.list{background:var(--card);border-radius:var(--r);padding:4px 0;box-shadow:0 2px 10px rgba(38,34,29,.05)}
+.task{display:flex;align-items:center;gap:12px;padding:14px 16px;border-bottom:1px solid var(--line)}
+.task:last-child{border-bottom:0}
+.task .t{font-weight:900;font-variant-numeric:tabular-nums;color:var(--muted);width:52px;flex:none}
+.task .n{flex:1;min-width:0}
+.task .n b{font-size:18px}
+.task .n .sub{font-size:13px;color:var(--muted)}
+.task.done .n b{color:var(--muted);text-decoration:line-through}
+.chip{flex:none;border-radius:999px;padding:8px 14px;font-weight:900;font-size:14px;min-width:88px;text-align:center}
+.chip.todo{background:var(--orange-soft);color:var(--orange-deep)}
+.chip.done{background:var(--green-soft);color:var(--green)}
+.chip.late{background:var(--red-soft);color:var(--red)}
+.undo{color:var(--muted);font-size:20px;padding:6px;flex:none}
+
+/* ---- sezioni ---- */
+.sec{margin:20px 0 10px;display:flex;justify-content:space-between;align-items:baseline}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:14px}
+.stat{background:var(--card);border-radius:var(--r-s);padding:10px 6px;text-align:center;box-shadow:0 2px 10px rgba(38,34,29,.05)}
+.stat b{display:block;font-size:22px}
+.stat span{font-size:12px;color:var(--muted)}
+.banner{background:var(--blue-soft);color:#2A4FB8;border-radius:var(--r-s);padding:12px 14px;font-weight:700;margin-bottom:12px}
+.banner.warn{background:var(--red-soft);color:var(--red)}
+
+/* ---- REGISTRA (fab) ---- */
+.fab{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(82px + var(--safe-b));z-index:20;width:auto;padding:0 28px;min-height:56px;border-radius:999px;box-shadow:0 10px 26px rgba(255,138,61,.45);font-size:18px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+.tile{background:var(--card);border:2px solid var(--line);border-radius:18px;padding:16px 8px;text-align:center;font-weight:900;font-size:16px;min-height:88px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;transition:transform .08s}
+.tile span{font-size:30px;line-height:1}
+.tile:active{transform:scale(.96)}
+.tile.on{border-color:var(--orange);background:var(--orange-soft)}
+.tile.red{border-color:var(--red-soft);background:var(--red-soft);color:var(--red)}
+
+/* ---- salute ---- */
+.hcard{min-width:0;overflow-wrap:anywhere;background:var(--card);border-radius:var(--r-s);padding:12px 10px;box-shadow:0 2px 10px rgba(38,34,29,.05);text-align:left}
+.hcard .e{font-size:28px}
+.hcard b{display:block;margin-top:4px;font-size:15px}
+.hcard .sub{font-size:13px;color:var(--muted)}
+.hcard .sub.due{color:var(--red);font-weight:700}
+.sos{width:100%;background:var(--red);color:#fff;border-radius:var(--r);padding:18px;font-size:20px;font-weight:900;box-shadow:0 10px 24px rgba(229,72,77,.3);margin:4px 0 18px}
+
+/* ---- diario ---- */
+.filters{display:flex;gap:8px;overflow-x:auto;padding:4px 0 10px;scrollbar-width:none}
+.filters::-webkit-scrollbar{display:none}
+.filters button{flex:none;border-radius:999px;padding:8px 14px;background:var(--card);font-weight:800;border:2px solid var(--line);font-size:15px}
+.filters button.on{border-color:var(--orange);background:var(--orange-soft);color:var(--orange-deep)}
+.day{margin:14px 0 6px;font-weight:900;color:var(--muted);font-size:14px}
+.ev{display:flex;gap:12px;align-items:flex-start;background:var(--card);border-radius:var(--r-s);padding:12px 14px;margin-bottom:8px;box-shadow:0 2px 10px rgba(38,34,29,.05)}
+.ev .e{font-size:26px;flex:none;line-height:1.2}
+.ev .b{flex:1;min-width:0}
+.ev .b b{display:block}
+.ev .b .sub{font-size:14px;color:var(--muted)}
+.ev .tm{color:var(--muted);font-size:14px;font-weight:800;flex:none}
+.ev .del{color:var(--muted);flex:none;padding:0 4px;font-size:18px}
+.ev img{border-radius:10px;margin-top:8px;max-height:220px}
+
+/* ---- calendario ---- */
+.cal-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.cal-head button{font-size:26px;padding:4px 12px;font-weight:900}
+.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;background:var(--card);border-radius:var(--r);padding:10px 8px;box-shadow:0 2px 10px rgba(38,34,29,.05)}
+.cal .wd{text-align:center;font-size:12px;color:var(--muted);font-weight:800;padding:4px 0}
+.cal .d{aspect-ratio:1;border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-weight:800;position:relative;font-size:15px}
+.cal .d.off{color:#CFC8BD}
+.cal .d.today{background:var(--orange-soft);color:var(--orange-deep)}
+.cal .d.sel{outline:3px solid var(--orange)}
+.cal .d .dots{display:flex;gap:2px;height:6px;margin-top:2px}
+.cal .d .dots i{width:6px;height:6px;border-radius:50%;background:var(--orange)}
+.cal .d .dots i.v{background:var(--blue)}
+.cal .d .dots i.m{background:var(--green)}
+
+/* ---- profilo / form ---- */
+.field{display:flex;justify-content:space-between;gap:12px;padding:12px 16px;border-bottom:1px solid var(--line)}
+.field:last-child{border-bottom:0}
+.field span:first-child{color:var(--muted);flex:none}
+.field span:last-child{font-weight:800;text-align:right;overflow-wrap:anywhere}
+label{display:block;font-weight:800;font-size:14px;color:var(--muted);margin:12px 0 0}
+label input,label select,label textarea{display:block;width:100%;margin-top:5px;padding:12px 14px;border:2px solid var(--line);border-radius:14px;background:#fff;font-size:17px;font-weight:700;color:var(--ink)}
+label textarea{min-height:80px;resize:vertical}
+label input:focus,label select:focus,label textarea:focus{outline:none;border-color:var(--orange)}
+label.ck{display:flex;align-items:center;gap:10px;font-size:16px;color:var(--ink);margin-top:14px}
+label.ck input{width:24px;height:24px;margin:0;accent-color:var(--orange)}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.choices{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.choices button{border-radius:999px;padding:10px 16px;background:var(--card);border:2px solid var(--line);font-weight:800}
+.choices button.on{border-color:var(--orange);background:var(--orange-soft);color:var(--orange-deep)}
+
+/* ---- sheet ---- */
+#overlay{position:fixed;inset:0;background:rgba(38,34,29,.45);z-index:50;display:flex;align-items:flex-end;justify-content:center}
+#overlay[hidden]{display:none}
+#sheet{background:var(--bg);width:100%;max-width:560px;max-height:92vh;overflow:auto;border-radius:26px 26px 0 0;padding:14px 18px calc(24px + var(--safe-b));animation:up .22s ease-out}
+@keyframes up{from{transform:translateY(40px);opacity:.6}to{transform:none;opacity:1}}
+@media (prefers-reduced-motion:reduce){#sheet{animation:none}}
+#sheet .handle{width:44px;height:5px;border-radius:5px;background:var(--line);margin:0 auto 10px}
+#sheet h2{margin-bottom:6px}
+#sheet form .btn{margin-top:18px}
+.close{position:absolute;right:18px;margin-top:-2px;font-size:22px;color:var(--muted);padding:6px 10px}
+
+/* ---- nav ---- */
+#nav{position:fixed;left:0;right:0;bottom:0;display:flex;background:#fff;border-top:1px solid var(--line);padding:6px 6px calc(8px + var(--safe-b));z-index:30}
+#nav[hidden]{display:none}
+#nav button{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;font-size:11px;font-weight:800;color:var(--muted);padding:6px 0;border-radius:12px}
+#nav button span{font-size:22px}
+#nav button.on{color:var(--orange-deep);background:var(--orange-soft)}
+
+/* ---- toast ---- */
+#toast{position:fixed;left:50%;transform:translateX(-50%);top:14px;background:var(--ink);color:#fff;padding:12px 18px;border-radius:14px;font-weight:800;z-index:99;max-width:90%;text-align:center;box-shadow:0 8px 20px rgba(0,0,0,.2)}
+#toast[hidden]{display:none}
+#toast.err{background:var(--red)}
+
+/* ---- login ---- */
+.login{max-width:380px;margin:12vh auto 0;text-align:center}
+.login .logo{font-size:72px}
+.login h1{margin-bottom:4px}
+.login form{text-align:left;margin-top:20px}
+.setup{padding:30px 20px;max-width:520px;margin:0 auto}
+.setup code{background:#fff;padding:2px 6px;border-radius:6px}
+.empty{text-align:center;color:var(--muted);padding:30px 10px;font-weight:700}
+.empty span{font-size:44px;display:block;margin-bottom:6px}
+.members{display:flex;gap:8px;flex-wrap:wrap}
+.members span{background:var(--card);border-radius:999px;padding:8px 14px;font-weight:800;border:2px solid var(--line)}
+a{color:var(--orange-deep);font-weight:800}
+
+</style>
+</head>
+<body>
+<div id="app"><div class="splash">🐶<br><small>Kelly Care</small></div></div>
+<nav id="nav" hidden>
+  <button data-a="nav" data-v="today"><span>🏠</span>Oggi</button>
+  <button data-a="nav" data-v="diary"><span>📖</span>Diario</button>
+  <button data-a="nav" data-v="health"><span>❤️</span>Salute</button>
+  <button data-a="nav" data-v="calendar"><span>📅</span>Calendario</button>
+  <button data-a="nav" data-v="profile"><span>🐶</span>Kelly</button>
+</nav>
+<div id="overlay" hidden><div id="sheet" role="dialog"></div></div>
+<div id="toast" hidden></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script>
+/* ============================================================
+   Kelly Care 🐶 — app.js
+   PWA privata per gestire Kelly in due. Supabase = login, dati,
+   sincronizzazione in tempo reale, foto e documenti.
+   ============================================================ */
+'use strict';
+
+/* ---------- configurazione ---------- */
+// Le chiavi possono stare in config.js OPPURE essere incollate nella schermata
+// di configurazione dell'app (salvate sul telefono). Nessun file da modificare.
+const CFG = (() => {
+  const f = window.KELLY_CONFIG || {};
+  const okFile = f.SUPABASE_URL && !f.SUPABASE_URL.includes('INSERISCI') && f.SUPABASE_ANON_KEY && !f.SUPABASE_ANON_KEY.includes('INSERISCI');
+  if (okFile) return f;
+  try { const l = JSON.parse(localStorage.getItem('kc_config') || 'null'); if (l && l.SUPABASE_URL && l.SUPABASE_ANON_KEY) return l; } catch {}
+  return null;
+})();
+if (!CFG) {
+  document.getElementById('app').innerHTML = `<div class="login">
+    <div class="logo">🐶</div><h1>Kelly Care</h1>
+    <p class="muted">Prima volta: incolla le due chiavi di Supabase.<br>Le trovi in <b>Project Settings → API</b>.</p>
+    <form id="cfgform">
+      <label>Project URL<input name="url" placeholder="https://xxxx.supabase.co" autocapitalize="off" autocorrect="off" required></label>
+      <label>anon public key<textarea name="key" placeholder="eyJhbGciOi..." required style="min-height:110px"></textarea></label>
+      <button class="btn" type="submit" style="margin-top:18px">Salva e apri Kelly Care 🐾</button>
+      <p class="small muted" style="margin-top:12px;text-align:center">Si fa una volta sola per telefono.</p>
+    </form></div>`;
+  document.getElementById('cfgform').addEventListener('submit', e => {
+    e.preventDefault();
+    const url = e.target.url.value.trim().replace(/\/+$/, ''), key = e.target.key.value.trim();
+    if (!/^https:\/\/.+\.supabase\.co$/.test(url)) { alert('Il Project URL deve essere tipo https://xxxx.supabase.co'); return; }
+    if (key.length < 40) { alert('La chiave sembra incompleta: copiala tutta.'); return; }
+    localStorage.setItem('kc_config', JSON.stringify({ SUPABASE_URL: url, SUPABASE_ANON_KEY: key }));
+    location.reload();
+  });
+  throw new Error('config mancante');
+}
+const sb = supabase.createClient(CFG.SUPABASE_URL, CFG.SUPABASE_ANON_KEY);
+const BUCKET = 'kelly';
+
+/* ---------- stato ---------- */
+const S = {
+  user: null, profile: null, dog: null, members: {}, dogPhoto: null,
+  tasks: [], comps: [], activeWalk: null,
+  today: { meals: [], walks: [], toilet: [], health: [], notes: [], weights: [] },
+  meds: [], vaccs: [], healthAll: [], weights: [], appts: [], docs: [], vets: [], reminders: [],
+  diary: [], diaryFilter: 'all', calMonth: null, calSel: null,
+  view: 'today', chan: null, tick: null
+};
+
+const DEFAULT_TASKS = [
+  { time: '08:00', emoji: '🍽️', title: 'Pappa', kind: 'meal' },
+  { time: '09:00', emoji: '🐾', title: 'Passeggiata', kind: 'walk' },
+  { time: '13:00', emoji: '💧', title: 'Controlla acqua', kind: 'water' },
+  { time: '19:00', emoji: '🍽️', title: 'Pappa', kind: 'meal' },
+  { time: '21:30', emoji: '🐾', title: 'Passeggiata', kind: 'walk' }
+];
+const HCATS = {
+  weight: { e: '⚖️', n: 'Peso' },
+  vaccine: { e: '💉', n: 'Vaccini' },
+  medication: { e: '💊', n: 'Farmaci' },
+  antiparasite: { e: '🦟', n: 'Antiparassitario' },
+  vet: { e: '🩺', n: 'Veterinario' },
+  grooming: { e: '✂️', n: 'Toelettatura' },
+  teeth: { e: '🦷', n: 'Denti' },
+  ears: { e: '👂', n: 'Orecchie' },
+  bath: { e: '🛁', n: 'Bagno' }
+};
+const SYMPTOMS = [
+  ['vomito', '🤮 Vomito'], ['diarrea', '💩 Diarrea'], ['non_mangia', '🍽️ Non mangia'],
+  ['beve_molto', '💧 Beve molto'], ['beve_poco', '💧 Beve poco'], ['poco_attiva', '😴 Poco attiva'],
+  ['dolore', '😖 Dolore/disagio'], ['sangue', '🩸 Sangue'], ['altro', '❓ Altro']
+];
+const MONTHS = ['gennaio', 'febbraio', 'marzo', 'aprile', 'maggio', 'giugno', 'luglio', 'agosto', 'settembre', 'ottobre', 'novembre', 'dicembre'];
+const WDAYS = ['dom', 'lun', 'mar', 'mer', 'gio', 'ven', 'sab'];
+
+/* ---------- utilità ---------- */
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const pad = n => String(n).padStart(2, '0');
+const valid = d => d instanceof Date && !isNaN(d);
+const fmtTime = d => { d = new Date(d); return valid(d) ? pad(d.getHours()) + ':' + pad(d.getMinutes()) : ''; };
+const fmtDate = d => { d = new Date(d); return valid(d) ? `${WDAYS[d.getDay()]} ${d.getDate()} ${MONTHS[d.getMonth()].slice(0, 3)}` : ''; };
+const fmtDateFull = d => { d = new Date(d); return valid(d) ? `${d.getDate()} ${MONTHS[d.getMonth()]} ${d.getFullYear()}` : ''; };
+const ymd = (d = new Date()) => { d = new Date(d); return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`; };
+const localDT = (d = new Date()) => { d = new Date(d); return `${ymd(d)}T${pad(d.getHours())}:${pad(d.getMinutes())}`; };
+const dayStart = (d = new Date()) => { d = new Date(d); d.setHours(0, 0, 0, 0); return d; };
+const isToday = d => ymd(d) === ymd();
+const who = id => (S.members[id] && S.members[id].display_name) || 'qualcuno';
+const byName = () => (S.profile && S.profile.display_name) || 'io';
+const dogName = () => (S.dog && S.dog.name) || 'Kelly';
+const minsBetween = (a, b) => Math.max(0, Math.round((new Date(b) - new Date(a)) / 60000));
+const age = bd => {
+  if (!bd) return '';
+  const b = new Date(bd), n = new Date();
+  let y = n.getFullYear() - b.getFullYear(), m = n.getMonth() - b.getMonth();
+  if (n.getDate() < b.getDate()) m--;
+  if (m < 0) { y--; m += 12; }
+  return y > 0 ? `${y} ann${y === 1 ? 'o' : 'i'}${m ? ` e ${m} mes${m === 1 ? 'e' : 'i'}` : ''}` : `${m} mes${m === 1 ? 'e' : 'i'}`;
+};
+const dueLabel = d => {
+  if (!d) return '';
+  const diff = Math.round((dayStart(d) - dayStart()) / 86400000);
+  if (diff < 0) return `scaduto da ${-diff} g`;
+  if (diff === 0) return 'oggi!';
+  if (diff === 1) return 'domani';
+  return `tra ${diff} g`;
+};
+const isDue = d => d && dayStart(d) <= dayStart();
+const debounce = (f, ms) => { let t; return (...a) => { clearTimeout(t); t = setTimeout(() => f(...a), ms); }; };
+
+let toastT;
+function toast(msg, err) {
+  const t = $('#toast'); t.textContent = msg; t.className = err ? 'err' : ''; t.hidden = false;
+  clearTimeout(toastT); toastT = setTimeout(() => { t.hidden = true; }, err ? 4000 : 2000);
+}
+async function run(fn, okMsg) {
+  try { await fn(); if (okMsg) toast(okMsg); }
+  catch (e) { console.error(e); toast('Errore: ' + (e.message || e), true); }
+}
+
+/* ---------- Supabase helpers ---------- */
+async function q(p) { const { data, error } = await p; if (error) throw error; return data; }
+const T = t => sb.from(t);
+async function ins(table, row) {
+  const base = { dog_id: S.dog.id, created_by: S.user.id };
+  if (['meals', 'toilet_events', 'health_events', 'notes'].includes(table)) base.occurred_at = new Date().toISOString();
+  return q(T(table).insert({ ...base, ...row }).select().single());
+}
+async function upload(file, folder) {
+  const ext = (file.name.split('.').pop() || 'bin').toLowerCase();
+  const path = `${S.dog.id}/${folder}/${Date.now()}.${ext}`;
+  const { error } = await sb.storage.from(BUCKET).upload(path, file, { contentType: file.type, upsert: false });
+  if (error) throw error;
+  return path;
+}
+const urlCache = {};
+async function signed(path) {
+  if (!path) return null;
+  if (urlCache[path] && urlCache[path].exp > Date.now()) return urlCache[path].url;
+  const { data, error } = await sb.storage.from(BUCKET).createSignedUrl(path, 3600 * 6);
+  if (error) return null;
+  urlCache[path] = { url: data.signedUrl, exp: Date.now() + 3600 * 5 * 1000 };
+  return data.signedUrl;
+}
+
+/* ---------- sheet (pannello dal basso) ---------- */
+let sheetSubmit = null;
+function openSheet(title, html, onSubmit) {
+  sheetSubmit = onSubmit || null;
+  $('#sheet').innerHTML = `<div class="handle"></div><button class="close" data-a="closeSheet" aria-label="Chiudi">✕</button><h2>${title}</h2>${html}`;
+  $('#overlay').hidden = false;
+  const first = $('#sheet input:not([type=hidden]):not([type=file]),#sheet textarea');
+  if (first && !('ontouchstart' in window)) first.focus();
+}
+function closeSheet() { $('#overlay').hidden = true; $('#sheet').innerHTML = ''; sheetSubmit = null; }
+const F = {
+  text: (n, l, v = '', ph = '') => `<label>${l}<input name="${n}" value="${esc(v)}" placeholder="${esc(ph)}"></label>`,
+  num: (n, l, v = '', ph = '') => `<label>${l}<input type="number" inputmode="decimal" step="any" name="${n}" value="${esc(v)}" placeholder="${esc(ph)}"></label>`,
+  dt: (n, l, v = localDT()) => `<label>${l}<input type="datetime-local" name="${n}" value="${v}"></label>`,
+  date: (n, l, v = '') => `<label>${l}<input type="date" name="${n}" value="${v}"></label>`,
+  time: (n, l, v = '') => `<label>${l}<input type="time" name="${n}" value="${v}"></label>`,
+  area: (n, l, v = '', ph = '') => `<label>${l}<textarea name="${n}" placeholder="${esc(ph)}">${esc(v)}</textarea></label>`,
+  select: (n, l, opts, v = '') => `<label>${l}<select name="${n}">${opts.map(o => `<option value="${esc(o[0])}"${o[0] === v ? ' selected' : ''}>${esc(o[1])}</option>`).join('')}</select></label>`,
+  check: (n, l, v = false) => `<label class="ck"><input type="checkbox" name="${n}"${v ? ' checked' : ''}>${l}</label>`,
+  file: (n, l, accept = 'image/*') => `<label>${l}<input type="file" name="${n}" accept="${accept}"></label>`,
+  hidden: (n, v) => `<input type="hidden" name="${n}" value="${esc(v)}">`,
+  // gruppo di scelte a pulsanti (single o multi) — valore in hidden input
+  choices: (n, l, opts, v = '', multi = false) => `<label>${l}</label><div class="choices" data-choices="${n}" data-multi="${multi ? 1 : 0}">${opts.map(o => `<button type="button" data-val="${esc(o[0])}" class="${(multi ? String(v).split(',') : [v]).includes(o[0]) ? 'on' : ''}">${esc(o[1])}</button>`).join('')}</div>${F.hidden(n, v)}`,
+  submit: (l = 'Salva', cls = '') => `<button class="btn ${cls}" type="submit">${l}</button>`
+};
+function formData(form) {
+  const o = {};
+  new FormData(form).forEach((v, k) => { o[k] = v; });
+  form.querySelectorAll('input[type=checkbox]').forEach(c => { o[c.name] = c.checked; });
+  return o;
+}
+
+/* ============================================================
+   AUTH
+   ============================================================ */
+function renderLogin(msg = '') {
+  $('#nav').hidden = true;
+  $('#app').innerHTML = `<div class="login">
+    <div class="logo">🐶</div>
+    <h1>Kelly Care</h1>
+    <p class="muted">La routine di Kelly, insieme.</p>
+    <form data-form="login">
+      ${F.text('email', 'Email', localStorage.getItem('kc_email') || '', 'la tua email')}
+      <label>Password<input type="password" name="password" required></label>
+      ${F.submit('Entra 🐾')}
+      ${msg ? `<p class="small" style="color:var(--red);margin-top:10px;text-align:center">${esc(msg)}</p>` : ''}
+    </form></div>`;
+}
+document.addEventListener('submit', async e => {
+  const form = e.target;
+  if (form.dataset.form === 'login') {
+    e.preventDefault();
+    const d = formData(form);
+    localStorage.setItem('kc_email', d.email);
+    form.querySelector('button').disabled = true;
+    const { error } = await sb.auth.signInWithPassword({ email: d.email.trim(), password: d.password });
+    if (error) renderLogin('Email o password non corretti.');
+    return;
+  }
+  if (form.closest('#sheet') && sheetSubmit) {
+    e.preventDefault();
+    const btn = form.querySelector('button[type=submit]');
+    if (btn) btn.disabled = true;
+    try { await sheetSubmit(formData(form), form); }
+    catch (err) { console.error(err); toast('Errore: ' + (err.message || err), true); if (btn) btn.disabled = false; }
+  }
+});
+
+if (typeof sb !== 'undefined') {
+  sb.auth.onAuthStateChange((ev, session) => {
+    if (ev === 'SIGNED_OUT') { S.user = null; stopSync(); renderLogin(); }
+    if (ev === 'SIGNED_IN' && session && !S.user) start(session.user);
+  });
+  (async function init() {
+    if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(() => {});
+    const { data: { session } } = await sb.auth.getSession();
+    if (session) start(session.user); else renderLogin();
+  })();
+}
+
+/* ============================================================
+   AVVIO E CARICAMENTO DATI
+   ============================================================ */
+async function start(user) {
+  S.user = user;
+  await run(async () => {
+    await loadCore();
+    if (!S.profile.display_name || S.profile.display_name.trim() === '') { askName(); return; }
+    if (!S.dog) { onboarding(); return; }
+    await loadToday();
+    S.view = 'today';
+    render();
+    startSync();
+    checkReminders();
+  });
+}
+async function loadCore() {
+  const profs = await q(T('profiles').select('*'));
+  S.members = Object.fromEntries(profs.map(p => [p.id, p]));
+  S.profile = S.members[S.user.id] || (await q(T('profiles').insert({ id: S.user.id, display_name: '' }).select().single()));
+  const dogs = await q(T('dogs').select('*').order('created_at').limit(1));
+  S.dog = dogs[0] || null;
+  if (S.dog) {
+    await q(T('family_members').upsert({ dog_id: S.dog.id, user_id: S.user.id }, { onConflict: 'dog_id,user_id' }));
+    S.dogPhoto = await signed(S.dog.photo_path);
+    S.tasks = await q(T('daily_tasks').select('*').eq('dog_id', S.dog.id).order('time'));
+    S.vets = await q(T('vets').select('*').eq('dog_id', S.dog.id).order('is_emergency').order('created_at'));
+    S.reminders = await q(T('reminders').select('*').eq('dog_id', S.dog.id).order('time'));
+    S.meds = await q(T('medications').select('*').eq('dog_id', S.dog.id).order('active', { ascending: false }).order('name'));
+    S.vaccs = await q(T('vaccinations').select('*').eq('dog_id', S.dog.id).order('given_on', { ascending: false }));
+    S.healthAll = await q(T('health_events').select('*').eq('dog_id', S.dog.id).order('occurred_at', { ascending: false }).limit(300));
+    S.weights = await q(T('weight_history').select('*').eq('dog_id', S.dog.id).order('measured_at', { ascending: false }).limit(100));
+    S.appts = await q(T('appointments').select('*').eq('dog_id', S.dog.id).order('starts_at'));
+  }
+}
+async function loadToday() {
+  if (!S.dog) return;
+  const from = dayStart().toISOString(), d = S.dog.id;
+  const [comps, meals, walks, toilet, health, notes, weights, active] = await Promise.all([
+    q(T('task_completions').select('*').eq('dog_id', d).eq('task_date', ymd())),
+    q(T('meals').select('*').eq('dog_id', d).gte('occurred_at', from).order('occurred_at')),
+    q(T('walks').select('*').eq('dog_id', d).gte('started_at', from).order('started_at')),
+    q(T('toilet_events').select('*').eq('dog_id', d).gte('occurred_at', from).order('occurred_at')),
+    q(T('health_events').select('*').eq('dog_id', d).gte('occurred_at', from).order('occurred_at')),
+    q(T('notes').select('*').eq('dog_id', d).gte('occurred_at', from).order('occurred_at')),
+    q(T('weight_history').select('*').eq('dog_id', d).gte('measured_at', from)),
+    q(T('walks').select('*').eq('dog_id', d).is('ended_at', null).order('started_at', { ascending: false }).limit(1))
+  ]);
+  S.comps = comps; S.today = { meals, walks, toilet, health, notes, weights };
+  S.activeWalk = active[0] || null;
+}
+async function refreshAll() {
+  await run(async () => {
+    await loadCore();
+    await loadToday();
+    if (S.view === 'diary') await loadDiary();
+    render();
+  });
+}
+const refreshSoon = debounce(refreshAll, 400);
+
+/* ---------- sincronizzazione in tempo reale ---------- */
+function startSync() {
+  stopSync();
+  S.chan = sb.channel('kelly-sync')
+    .on('postgres_changes', { event: '*', schema: 'public' }, () => refreshSoon())
+    .subscribe();
+  if (S.tick) clearInterval(S.tick);
+  S.tick = setInterval(() => {
+    if (S.view === 'today' && S.activeWalk) { const el = $('#walktimer'); if (el) el.textContent = walkClock(); }
+    if (new Date().getSeconds() < 30) checkReminders();
+  }, 30000);
+  document.addEventListener('visibilitychange', () => { if (!document.hidden && S.user) refreshSoon(); });
+}
+function stopSync() { if (S.chan) { sb.removeChannel(S.chan); S.chan = null; } if (S.tick) { clearInterval(S.tick); S.tick = null; } }
+
+/* ---------- prima configurazione ---------- */
+function askName() {
+  $('#app').innerHTML = '';
+  openSheet('Come ti chiami? 👋', `<p class="muted">Così Kelly saprà chi si è preso cura di lei.</p>
+    <form>${F.text('name', 'Il tuo nome', '', 'es. Davide')}${F.submit('Continua')}</form>`,
+    async d => {
+      const name = (d.name || '').trim(); if (!name) return;
+      await q(T('profiles').update({ display_name: name }).eq('id', S.user.id));
+      closeSheet(); start(S.user); S.user = S.user; // ricarica
+    });
+}
+function onboarding() {
+  $('#app').innerHTML = '';
+  openSheet('Creiamo il profilo di Kelly 🐶', `<p class="muted">Bastano pochi dati, il resto lo aggiungi quando vuoi.</p>
+    <form>${F.text('name', 'Nome', 'Kelly')}${F.text('breed', 'Razza', '', 'es. Golden Retriever')}
+    <div class="pair">${F.select('sex', 'Sesso', [['F', 'Femmina'], ['M', 'Maschio']], 'F')}${F.date('birth_date', 'Data di nascita')}</div>
+    ${F.num('weight_kg', 'Peso (kg)')}${F.text('food', 'Alimentazione', '', 'es. crocchette Royal Canin 150 g')}
+    ${F.submit('Crea Kelly Care 🐾')}</form>`,
+    async d => {
+      const dog = await q(T('dogs').insert({ name: d.name || 'Kelly', breed: d.breed || null, sex: d.sex, birth_date: d.birth_date || null, weight_kg: d.weight_kg || null, food: d.food || null, created_by: S.user.id }).select().single());
+      await q(T('family_members').insert({ dog_id: dog.id, user_id: S.user.id }));
+      await q(T('daily_tasks').insert(DEFAULT_TASKS.map((t, i) => ({ ...t, dog_id: dog.id, sort_order: i, active: true }))));
+      await q(T('reminders').insert([
+        { dog_id: dog.id, title: `🐶 È ora della pappa di ${d.name || 'Kelly'}!`, time: '08:00', category: 'meal', active: true, days: [1, 2, 3, 4, 5, 6, 7], created_by: S.user.id },
+        { dog_id: dog.id, title: `🐾 ${d.name || 'Kelly'} aspetta la sua passeggiata ❤️`, time: '09:00', category: 'walk', active: true, days: [1, 2, 3, 4, 5, 6, 7], created_by: S.user.id },
+        { dog_id: dog.id, title: `💧 Controlla l'acqua di ${d.name || 'Kelly'}`, time: '13:00', category: 'water', active: true, days: [1, 2, 3, 4, 5, 6, 7], created_by: S.user.id },
+        { dog_id: dog.id, title: `🐶 È ora della pappa di ${d.name || 'Kelly'}!`, time: '19:00', category: 'meal', active: true, days: [1, 2, 3, 4, 5, 6, 7], created_by: S.user.id },
+        { dog_id: dog.id, title: `🐾 ${d.name || 'Kelly'} aspetta la sua passeggiata ❤️`, time: '21:30', category: 'walk', active: true, days: [1, 2, 3, 4, 5, 6, 7], created_by: S.user.id }
+      ]));
+      if (d.weight_kg) await q(T('weight_history').insert({ dog_id: dog.id, weight_kg: d.weight_kg, measured_at: new Date().toISOString(), created_by: S.user.id }));
+      closeSheet(); toast('Benvenuta Kelly! 🐶'); start(S.user);
+    });
+}
+
+/* ============================================================
+   RENDER
+   ============================================================ */
+function render() {
+  if (!S.user || !S.dog) return;
+  const y = window.scrollY;
+  $('#nav').hidden = false;
+  document.querySelectorAll('#nav button').forEach(b => b.classList.toggle('on', b.dataset.v === S.view));
+  const views = { today: renderToday, diary: renderDiary, health: renderHealth, calendar: renderCalendar, profile: renderProfile };
+  $('#app').innerHTML = views[S.view]();
+  window.scrollTo(0, S.view === 'today' ? y : 0);
+}
+
+/* ---------- OGGI ---------- */
+function taskState(t) {
+  const c = S.comps.find(x => x.task_id === t.id);
+  if (c) return { st: 'done', c };
+  const [h, m] = t.time.split(':').map(Number), now = new Date();
+  const late = now.getHours() * 60 + now.getMinutes() > h * 60 + m + 60;
+  return { st: late ? 'late' : 'todo' };
+}
+function walkClock() {
+  if (!S.activeWalk) return '';
+  const s = Math.floor((Date.now() - new Date(S.activeWalk.started_at)) / 1000);
+  return `${pad(Math.floor(s / 60))}:${pad(s % 60)}`;
+}
+function dueBanners() {
+  const out = [];
+  const seen = new Set();
+  S.meds.filter(m => m.active && isDue(m.next_due)).forEach(m => out.push(`💊 Oggi c'è ${m.name} di ${dogName()}.`));
+  S.vaccs.filter(v => isDue(v.next_due)).forEach(v => out.push(`💉 Vaccino ${v.name}: ${dueLabel(v.next_due)}`));
+  S.healthAll.forEach(h => {
+    if (seen.has(h.category) || !HCATS[h.category]) return; seen.add(h.category);
+    if (isDue(h.next_due)) out.push(`${HCATS[h.category].e} ${HCATS[h.category].n} di ${dogName()}: ${dueLabel(h.next_due)}`);
+  });
+  S.appts.filter(a => isToday(a.starts_at)).forEach(a => out.push(`📅 Oggi alle ${fmtTime(a.starts_at)}: ${a.title}`));
+  return out;
+}
+function renderToday() {
+  const tasks = S.tasks.filter(t => t.active).sort((a, b) => a.time.localeCompare(b.time));
+  const states = tasks.map(t => ({ t, ...taskState(t) }));
+  const next = states.find(s => s.st !== 'done');
+  let now;
+  if (S.activeWalk) {
+    now = `<div class="now walk"><div class="lbl">Passeggiata in corso 🐾 con ${esc(who(S.activeWalk.created_by))}</div>
+      <div class="timer" id="walktimer">${walkClock()}</div>
+      <button class="btn" data-a="endWalk" style="margin-top:10px">Termina passeggiata</button></div>`;
+  } else if (next) {
+    now = `<div class="now ${next.st}"><div class="lbl">${next.st === 'late' ? '⚠ In ritardo · era per le ' + next.t.time : 'Adesso · ore ' + next.t.time}</div>
+      <div class="what">${esc(next.t.emoji)} ${esc(next.t.title)}</div>
+      <div class="row">${next.t.kind === 'walk' ? `<button class="btn" data-a="startWalk">Inizia passeggiata 🐾</button>` : ''}
+      <button class="btn" data-a="doTask" data-id="${next.t.id}">Fatto ✓</button></div></div>`;
+  } else {
+    now = `<div class="now done"><div class="lbl">Routine di oggi</div><div class="what">Tutto fatto! 🎉</div><p>${esc(dogName())} è una cagnolina felice.</p></div>`;
+  }
+  const list = states.map(({ t, st, c }) => `<div class="task ${st}">
+      <div class="t">${esc(t.time)}</div>
+      <div class="n"><b>${esc(t.emoji)} ${esc(t.title)}</b>
+        <div class="sub">${st === 'done' ? `Fatto da ${esc(who(c.completed_by))} alle ${fmtTime(c.completed_at)} ✓` : st === 'late' ? 'Tocca quando è fatta' : 'Tocca quando è fatta'}</div></div>
+      ${st === 'done' ? `<span class="chip done">✓ Fatto</span><button class="undo" data-a="undoTask" data-id="${c.id}" aria-label="Annulla">↩</button>`
+        : `<button class="chip ${st}" data-a="doTask" data-id="${t.id}">${st === 'late' ? '⚠ In ritardo' : '○ Da fare'}</button>`}
+    </div>`).join('');
+  const T0 = S.today;
+  const pee = T0.toilet.filter(x => x.kind === 'pee').length + T0.walks.filter(w => w.pee).length;
+  const poo = T0.toilet.filter(x => x.kind === 'poo').length + T0.walks.filter(w => w.poo).length;
+  const walkMin = T0.walks.reduce((a, w) => a + (w.duration_min || 0), 0);
+  const banners = dueBanners();
+  return `<div class="hero"><button class="avatar" data-a="dogPhoto" aria-label="Cambia foto">${S.dogPhoto ? `<img src="${S.dogPhoto}" alt="">` : '🐶'}</button>
+    <div><h1>${esc(dogName())}</h1><p class="muted">Oggi, ${fmtDate(new Date())}${S.dog.birth_date ? ' · ' + age(S.dog.birth_date) : ''}</p></div></div>
+    ${banners.map(b => `<div class="banner">${esc(b)}</div>`).join('')}
+    ${now}
+    <div class="sec"><h2>Routine di oggi</h2><button class="btn ghost sm" data-a="editTasks">Modifica</button></div>
+    <div class="list">${list || '<div class="empty"><span>🐾</span>Nessuna attività. Aggiungine una!</div>'}</div>
+    <div class="stats">
+      <div class="stat"><b>${T0.meals.length}</b><span>🍽️ pasti</span></div>
+      <div class="stat"><b>${T0.walks.filter(w => w.ended_at).length}</b><span>🐾 giri · ${walkMin} min</span></div>
+      <div class="stat"><b>${pee}</b><span>💧 pipì</span></div>
+      <div class="stat"><b>${poo}</b><span>💩 popò</span></div>
+    </div>
+    <button class="btn fab" data-a="register">＋ REGISTRA</button>
+    <div style="height:70px"></div>`;
+}
+
+/* ---------- DIARIO ---------- */
+async function loadDiary() {
+  const from = new Date(Date.now() - 45 * 86400000).toISOString(), d = S.dog.id;
+  const [meals, walks, toilet, health, notes, weights] = await Promise.all([
+    q(T('meals').select('*').eq('dog_id', d).gte('occurred_at', from)),
+    q(T('walks').select('*').eq('dog_id', d).gte('started_at', from)),
+    q(T('toilet_events').select('*').eq('dog_id', d).gte('occurred_at', from)),
+    q(T('health_events').select('*').eq('dog_id', d).gte('occurred_at', from)),
+    q(T('notes').select('*').eq('dog_id', d).gte('occurred_at', from)),
+    q(T('weight_history').select('*').eq('dog_id', d).gte('measured_at', from))
+  ]);
+  const ev = [];
+  meals.forEach(m => ev.push({ id: m.id, tb: 'meals', f: 'meal', t: m.occurred_at, e: m.is_snack ? '🦴' : '🍽️', title: m.is_snack ? 'Snack' : 'Pappa', sub: [m.food, m.brand, m.eaten_qty != null ? `mangiato ${m.eaten_qty}${m.unit || 'g'}` + (m.planned_qty ? ` su ${m.planned_qty}` : '') : '', m.notes].filter(Boolean).join(' · '), by: m.created_by }));
+  walks.forEach(w => ev.push({ id: w.id, tb: 'walks', f: 'walk', t: w.started_at, e: '🐾', dur: w.duration_min || (w.ended_at ? minsBetween(w.started_at, w.ended_at) : 0), title: w.ended_at ? `Passeggiata · ${w.duration_min || minsBetween(w.started_at, w.ended_at)} min` : 'Passeggiata in corso', sub: [w.pee ? 'pipì' : '', w.poo ? 'popò' : '', w.notes].filter(Boolean).join(' · '), by: w.created_by }));
+  toilet.forEach(x => ev.push({ id: x.id, tb: 'toilet_events', f: 'toilet', t: x.occurred_at, e: x.kind === 'poo' ? '💩' : '💧', title: x.kind === 'poo' ? 'Popò' : 'Pipì', sub: [x.stool, x.notes].filter(Boolean).join(' · '), by: x.created_by }));
+  health.forEach(h => ev.push({ id: h.id, tb: 'health_events', f: h.category === 'medication_given' ? 'med' : 'health', t: h.occurred_at, e: healthEmoji(h), title: h.title || (HCATS[h.category] ? HCATS[h.category].n : h.category), sub: healthSub(h), by: h.created_by, photo: h.attachment_path }));
+  notes.forEach(n => ev.push({ id: n.id, tb: 'notes', f: 'note', t: n.occurred_at, e: n.photo_path ? '📷' : '📝', title: n.photo_path ? 'Foto' : 'Nota', sub: n.text || '', by: n.created_by, photo: n.photo_path }));
+  weights.forEach(w => ev.push({ id: w.id, tb: 'weight_history', f: 'weight', t: w.measured_at, e: '⚖️', title: `Peso: ${w.weight_kg} kg`, sub: w.notes || '', by: w.created_by }));
+  ev.sort((a, b) => new Date(b.t) - new Date(a.t));
+  for (const e of ev) if (e.photo) e.photoUrl = await signed(e.photo);
+  S.diary = ev;
+}
+function healthEmoji(h) {
+  return { sick: '🚨', vomit: '🤮', water: '💧', medication_given: '💊' }[h.category] || (HCATS[h.category] ? HCATS[h.category].e : '❤️');
+}
+function healthSub(h) {
+  const d = h.details || {};
+  const parts = [];
+  if (h.category === 'sick' && d.symptoms) parts.push(d.symptoms.split(',').map(s => (SYMPTOMS.find(x => x[0] === s) || [s, s])[1]).join(', '));
+  if (d.episodes) parts.push(`${d.episodes} episodi`);
+  if (d.amount) parts.push(d.amount);
+  if (d.dose) parts.push(d.dose);
+  if (d.last_meal) parts.push('ultimo pasto: ' + d.last_meal);
+  if (d.water) parts.push('acqua: ' + d.water);
+  if (d.behavior) parts.push(d.behavior);
+  if (h.next_due) parts.push('prossimo: ' + fmtDateFull(h.next_due));
+  if (h.notes) parts.push(h.notes);
+  return parts.join(' · ');
+}
+function weekStats() {
+  const from = Date.now() - 7 * 86400000;
+  const last7 = S.diary.filter(e => new Date(e.t).getTime() >= from);
+  const meals = last7.filter(e => e.f === 'meal').length;
+  const walks = last7.filter(e => e.f === 'walk');
+  const mins = walks.reduce((a, w) => a + (w.dur || 0), 0);
+  const pee = last7.filter(e => e.f === 'toilet' && e.e === '💧').length;
+  const poo = last7.filter(e => e.f === 'toilet' && e.e === '💩').length;
+  const health = last7.filter(e => e.f === 'health').length;
+  const w0 = S.weights[0], w1 = S.weights[1];
+  let peso = w0 ? `${w0.weight_kg} kg` : '—';
+  if (w0 && w1) {
+    const d = (w0.weight_kg - w1.weight_kg).toFixed(1);
+    peso += d > 0 ? ` ↑${d}` : d < 0 ? ` ↓${Math.abs(d)}` : ' =';
+  }
+  return `<div class="sec"><h2>Ultimi 7 giorni</h2></div>
+    <div class="stats">
+      <div class="stat"><b>${meals}</b><span>🍽️ pasti</span></div>
+      <div class="stat"><b>${walks.length}</b><span>🐾 giri</span></div>
+      <div class="stat"><b>${mins}</b><span>⏱️ minuti</span></div>
+      <div class="stat"><b>${pee + poo}</b><span>💧 bisogni</span></div>
+    </div>
+    <div class="stats" style="grid-template-columns:repeat(2,1fr);margin-top:8px">
+      <div class="stat"><b style="font-size:18px">${peso}</b><span>⚖️ peso</span></div>
+      <div class="stat"><b>${health}</b><span>❤️ note salute</span></div>
+    </div>`;
+}
+function renderDiary() {
+  const filters = [['all', 'Tutto'], ['meal', '🍽️ Pasti'], ['walk', '🐾 Passeggiate'], ['toilet', '💩 Bisogni'], ['health', '❤️ Salute'], ['weight', '⚖️ Peso'], ['med', '💊 Farmaci'], ['note', '📝 Note']];
+  const items = S.diary.filter(e => S.diaryFilter === 'all' || e.f === S.diaryFilter);
+  let html = '', lastDay = '';
+  items.forEach(e => {
+    const day = ymd(e.t);
+    if (day !== lastDay) { html += `<div class="day">${isToday(e.t) ? 'Oggi' : fmtDate(e.t)}</div>`; lastDay = day; }
+    html += `<div class="ev"><div class="e">${e.e}</div><div class="b"><b>${esc(e.title)}</b><div class="sub">${esc(e.sub)}${e.sub ? ' · ' : ''}${esc(who(e.by))}</div>${e.photoUrl ? `<img src="${e.photoUrl}" alt="">` : ''}</div>
+      <div class="tm">${fmtTime(e.t)}</div><button class="del" data-a="delRow" data-tb="${e.tb}" data-id="${e.id}" aria-label="Elimina">🗑</button></div>`;
+  });
+  return `<h1>Diario 📖</h1>
+    ${S.diary.length ? weekStats() : ''}
+    <div class="filters" style="margin-top:14px">${filters.map(f => `<button class="${S.diaryFilter === f[0] ? 'on' : ''}" data-a="diaryFilter" data-f="${f[0]}">${f[1]}</button>`).join('')}</div>
+    ${html || '<div class="empty"><span>📖</span>Ancora niente qui. Registra qualcosa dalla schermata Oggi!</div>'}`;
+}
+
+/* ---------- SALUTE ---------- */
+function lastOf(cat) { return S.healthAll.find(h => h.category === cat); }
+function renderHealth() {
+  const lastW = S.weights[0];
+  const prevW = S.weights[1];
+  const wTrend = lastW && prevW ? (lastW.weight_kg > prevW.weight_kg ? ' ↑' : lastW.weight_kg < prevW.weight_kg ? ' ↓' : ' =') : '';
+  const cards = Object.entries(HCATS).map(([k, c]) => {
+    let sub = 'Nessun dato', due = false;
+    if (k === 'weight') sub = lastW ? `${lastW.weight_kg} kg${wTrend} · ${fmtDate(lastW.measured_at)}` : 'Nessun dato';
+    else if (k === 'vaccine') { const v = S.vaccs.find(x => x.next_due) || S.vaccs[0]; if (v) { sub = v.next_due ? `${v.name}: ${dueLabel(v.next_due)}` : `${v.name} · ${fmtDate(v.given_on)}`; due = isDue(v.next_due); } }
+    else if (k === 'medication') { const act = S.meds.filter(m => m.active); if (act.length) { const dueM = act.find(m => isDue(m.next_due)); sub = dueM ? `${dueM.name}: ${dueLabel(dueM.next_due)}` : `${act.length} attiv${act.length === 1 ? 'o' : 'i'}`; due = !!dueM; } }
+    else { const h = lastOf(k); if (h) { sub = h.next_due ? `prossimo: ${dueLabel(h.next_due)}` : `ultimo: ${fmtDate(h.occurred_at)}`; due = isDue(h.next_due); } }
+    return `<button class="hcard" data-a="healthCat" data-k="${k}"><div class="e">${c.e}</div><b>${c.n}</b><div class="sub${due ? ' due' : ''}">${esc(sub)}</div></button>`;
+  }).join('');
+  const vets = S.vets.map(v => `<div class="ev"><div class="e">${v.is_emergency ? '🚑' : '🩺'}</div><div class="b"><b>${esc(v.name)}</b><div class="sub">${esc([v.clinic, v.address, v.notes].filter(Boolean).join(' · '))}</div>
+      <div class="row" style="margin-top:10px">${v.phone ? `<a class="btn sm green" href="tel:${esc(v.phone.replace(/\s/g, ''))}">📞 Chiama</a>` : ''}${v.address ? `<a class="btn sm blue" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(v.address)}">🗺️ Mappa</a>` : ''}<button class="btn sm sec" data-a="editVet" data-id="${v.id}">✏️</button></div></div></div>`).join('');
+  const docs = S.docs.map(d => `<div class="ev"><div class="e">${docEmoji(d)}</div><div class="b"><b>${esc(d.title)}</b><div class="sub">${esc(d.category)} · ${fmtDate(d.created_at)} · ${esc(who(d.created_by))}</div></div><button class="btn sm sec" data-a="openDoc" data-p="${esc(d.storage_path)}">Apri</button><button class="del" data-a="delDoc" data-id="${d.id}" data-p="${esc(d.storage_path)}">🗑</button></div>`).join('');
+  return `<h1>Salute ❤️</h1>
+    <button class="sos" data-a="sick">🚨 ${esc(dogName()).toUpperCase()} NON STA BENE</button>
+    <div class="grid">${cards}</div>
+    <div class="sec"><h2>Veterinario</h2><button class="btn ghost sm" data-a="editVet">＋ Aggiungi</button></div>
+    ${vets || '<div class="empty"><span>🩺</span>Aggiungi il veterinario di fiducia e il pronto soccorso.</div>'}
+    <div class="sec"><h2>Documenti</h2><button class="btn ghost sm" data-a="addDoc">＋ Carica</button></div>
+    ${docs || '<div class="empty"><span>📁</span>Libretto, vaccini, analisi, ricette, referti…</div>'}`;
+}
+function docEmoji(d) { return { libretto: '📘', vaccini: '💉', analisi: '🧪', ricetta: '💊', referto: '📄', microchip: '🔖' }[d.category] || (d.mime && d.mime.startsWith('image') ? '🖼️' : '📎'); }
+
+/* ---------- CALENDARIO ---------- */
+function calItems() {
+  const items = [];
+  S.meds.filter(m => m.active && m.next_due).forEach(m => items.push({ d: m.next_due, e: '💊', t: m.name, c: 'm' }));
+  S.vaccs.filter(v => v.next_due).forEach(v => items.push({ d: v.next_due, e: '💉', t: `Vaccino ${v.name}`, c: 'v' }));
+  const seen = new Set();
+  S.healthAll.forEach(h => { if (!HCATS[h.category] || seen.has(h.category)) return; seen.add(h.category); if (h.next_due) items.push({ d: h.next_due, e: HCATS[h.category].e, t: HCATS[h.category].n, c: '' }); });
+  S.appts.forEach(a => items.push({ d: ymd(a.starts_at), e: a.category === 'vet' ? '🩺' : a.category === 'grooming' ? '✂️' : '📅', t: `${fmtTime(a.starts_at)} ${a.title}${a.location ? ' · ' + a.location : ''}`, c: 'v', id: a.id }));
+  return items;
+}
+function renderCalendar() {
+  const base = S.calMonth || dayStart(); S.calMonth = base;
+  const y = base.getFullYear(), m = base.getMonth();
+  const first = new Date(y, m, 1), startDow = (first.getDay() + 6) % 7, days = new Date(y, m + 1, 0).getDate();
+  const items = calItems(); const byDay = {}; items.forEach(i => { (byDay[i.d] = byDay[i.d] || []).push(i); });
+  let cells = ['lun', 'mar', 'mer', 'gio', 'ven', 'sab', 'dom'].map(w => `<div class="wd">${w}</div>`).join('');
+  for (let i = 0; i < startDow; i++) cells += '<div class="d off"></div>';
+  for (let d = 1; d <= days; d++) {
+    const key = `${y}-${pad(m + 1)}-${pad(d)}`;
+    const its = byDay[key] || [];
+    cells += `<button class="d${key === ymd() ? ' today' : ''}${key === S.calSel ? ' sel' : ''}" data-a="calSel" data-d="${key}">${d}<div class="dots">${its.slice(0, 3).map(i => `<i class="${i.c}"></i>`).join('')}</div></button>`;
+  }
+  const sel = S.calSel || ymd();
+  const selItems = byDay[sel] || [];
+  const upcoming = items.filter(i => i.d >= ymd()).sort((a, b) => a.d.localeCompare(b.d)).slice(0, 8);
+  return `<h1>Calendario 📅</h1>
+    <div class="cal-head"><button data-a="calPrev">‹</button><h2>${MONTHS[m]} ${y}</h2><button data-a="calNext">›</button></div>
+    <div class="cal">${cells}</div>
+    <div class="sec"><h2>${sel === ymd() ? 'Oggi' : fmtDateFull(sel)}</h2><button class="btn ghost sm" data-a="addAppt" data-d="${sel}">＋ Appuntamento</button></div>
+    ${selItems.map(i => `<div class="ev"><div class="e">${i.e}</div><div class="b"><b>${esc(i.t)}</b></div>${i.id ? `<button class="del" data-a="delRow" data-tb="appointments" data-id="${i.id}">🗑</button>` : ''}</div>`).join('') || '<div class="empty small">Niente in programma.</div>'}
+    <div class="sec"><h2>Prossime scadenze</h2></div>
+    ${upcoming.map(i => `<div class="ev"><div class="e">${i.e}</div><div class="b"><b>${esc(i.t)}</b><div class="sub">${fmtDateFull(i.d)} · ${dueLabel(i.d)}</div></div></div>`).join('') || '<div class="empty small">Nessuna scadenza. Aggiungile dalla sezione Salute.</div>'}`;
+}
+
+/* ---------- PROFILO KELLY ---------- */
+function renderProfile() {
+  const d = S.dog;
+  const rows = [['Nome', d.name], ['Razza', d.breed], ['Sesso', d.sex === 'M' ? 'Maschio' : d.sex === 'F' ? 'Femmina' : ''], ['Nata il', d.birth_date ? fmtDateFull(d.birth_date) : ''], ['Età', age(d.birth_date)], ['Peso', d.weight_kg ? d.weight_kg + ' kg' : ''], ['Sterilizzata', d.neutered ? 'Sì' : 'No'], ['Microchip', d.microchip], ['Alimentazione', d.food], ['Allergie / intolleranze', d.allergies], ['Note', d.notes]];
+  const rem = S.reminders.map(r => `<div class="task"><div class="t">${esc(r.time)}</div><div class="n"><b>${esc(r.title)}</b><div class="sub">${(r.days || []).length === 7 ? 'Ogni giorno' : (r.days || []).map(x => ['', 'lun', 'mar', 'mer', 'gio', 'ven', 'sab', 'dom'][x]).join(' ')}</div></div>
+    <button class="chip ${r.active ? 'done' : 'todo'}" data-a="toggleRem" data-id="${r.id}" data-on="${r.active ? 1 : 0}">${r.active ? 'Attivo' : 'Spento'}</button><button class="undo" data-a="editRem" data-id="${r.id}">✏️</button></div>`).join('');
+  const notifState = !('Notification' in window) ? 'non supportate su questo browser' : Notification.permission === 'granted' ? 'attive ✓' : Notification.permission === 'denied' ? 'bloccate nelle impostazioni del telefono' : 'da attivare';
+  return `<div style="text-align:center;margin-top:6px"><button class="avatar big" data-a="dogPhoto">${S.dogPhoto ? `<img src="${S.dogPhoto}" alt="">` : '🐶'}</button>
+    <h1 style="margin-top:10px">${esc(d.name)}</h1><p class="muted">${esc([d.breed, age(d.birth_date)].filter(Boolean).join(' · '))}</p>
+    <button class="btn sec sm" style="margin-top:10px" data-a="dogPhoto">📷 Cambia foto</button></div>
+    <div class="sec"><h2>Profilo</h2><button class="btn ghost sm" data-a="editDog">Modifica</button></div>
+    <div class="list">${rows.map(r => `<div class="field"><span>${r[0]}</span><span>${esc(r[1] || '—')}</span></div>`).join('')}</div>
+    <div class="sec"><h2>Promemoria</h2><button class="btn ghost sm" data-a="editRem">＋ Nuovo</button></div>
+    <div class="banner">🔔 Notifiche: ${notifState}. ${Notification.permission !== 'granted' && 'Notification' in window ? '<button class="btn sm" style="margin-top:8px" data-a="enableNotif">Attiva notifiche</button>' : ''}<div class="small" style="margin-top:6px;font-weight:600">Funzionano con l'app installata sulla Home. Su iPhone servono iOS 16.4 o successivo.</div></div>
+    <div class="list">${rem || '<div class="empty small">Nessun promemoria.</div>'}</div>
+    <div class="sec"><h2>Famiglia di ${esc(d.name)}</h2></div>
+    <div class="members">${Object.values(S.members).map(m => `<span>${esc(m.display_name || 'Senza nome')}${m.id === S.user.id ? ' (tu)' : ''}</span>`).join('')}</div>
+    <div style="margin-top:24px" class="row"><button class="btn sec" data-a="editMe">✏️ Il mio nome</button><button class="btn ghost" data-a="logout">Esci</button></div>
+    <p class="small muted" style="text-align:center;margin-top:20px">Kelly Care · privata, senza pubblicità, solo per voi due 🐾<br><button class="btn ghost sm" data-a="resetCfg" style="margin-top:6px">Cambia chiavi Supabase</button></p>`;
+}
+
+/* ============================================================
+   AZIONI
+   ============================================================ */
+const A = {};
+document.addEventListener('click', e => {
+  const el = e.target.closest('[data-a]');
+  if (el && A[el.dataset.a]) { e.preventDefault(); A[el.dataset.a](el.dataset, el); return; }
+  const ch = e.target.closest('[data-choices] button');
+  if (ch) {
+    const box = ch.parentElement, multi = box.dataset.multi === '1';
+    if (!multi) box.querySelectorAll('button').forEach(b => b.classList.remove('on'));
+    ch.classList.toggle('on');
+    const val = [...box.querySelectorAll('button.on')].map(b => b.dataset.val).join(',');
+    box.parentElement.querySelector(`input[name="${box.dataset.choices}"]`).value = val;
+    if (box.dataset.autosubmit === '1') box.closest('form').requestSubmit();
+    return;
+  }
+  if (e.target.id === 'overlay') closeSheet();
+});
+A.closeSheet = closeSheet;
+A.nav = async ({ v }) => { S.view = v; if (v === 'diary') { render(); await run(loadDiary); } if (v === 'health') { S.docs = await q(T('documents').select('*').eq('dog_id', S.dog.id).order('created_at', { ascending: false })); } render(); };
+A.logout = () => sb.auth.signOut();
+A.resetCfg = () => { if (confirm('Rimuovere le chiavi salvate su questo telefono? (i dati di Kelly restano su Supabase)')) { localStorage.removeItem('kc_config'); sb.auth.signOut(); location.reload(); } };
+A.diaryFilter = ({ f }) => { S.diaryFilter = f; render(); };
+A.calPrev = () => { S.calMonth = new Date(S.calMonth.getFullYear(), S.calMonth.getMonth() - 1, 1); render(); };
+A.calNext = () => { S.calMonth = new Date(S.calMonth.getFullYear(), S.calMonth.getMonth() + 1, 1); render(); };
+A.calSel = ({ d }) => { S.calSel = d; render(); };
+
+/* --- routine --- */
+async function completeTask(taskId) {
+  await q(T('task_completions').upsert({ dog_id: S.dog.id, task_id: taskId, task_date: ymd(), completed_by: S.user.id, completed_at: new Date().toISOString() }, { onConflict: 'task_id,task_date' }));
+}
+async function autoCompleteKind(kind) {
+  const now = new Date(), nowM = now.getHours() * 60 + now.getMinutes();
+  const cand = S.tasks.filter(t => t.active && t.kind === kind && !S.comps.find(c => c.task_id === t.id))
+    .map(t => { const [h, m] = t.time.split(':').map(Number); return { t, diff: h * 60 + m - nowM }; })
+    .filter(x => x.diff <= 150).sort((a, b) => Math.abs(a.diff) - Math.abs(b.diff))[0];
+  if (cand) await completeTask(cand.t.id);
+}
+A.doTask = ({ id }) => run(async () => { await completeTask(id); await loadToday(); render(); }, 'Fatto ✓');
+A.undoTask = ({ id }) => run(async () => { await q(T('task_completions').delete().eq('id', id)); await loadToday(); render(); }, 'Annullato');
+A.editTasks = () => {
+  const rows = S.tasks.sort((a, b) => a.time.localeCompare(b.time)).map(t => `<div class="task"><div class="t">${esc(t.time)}</div><div class="n"><b>${esc(t.emoji)} ${esc(t.title)}</b><div class="sub">${t.active ? 'attiva' : 'disattivata'}</div></div><button class="undo" data-a="editTask" data-id="${t.id}">✏️</button><button class="undo" data-a="delTask" data-id="${t.id}">🗑</button></div>`).join('');
+  openSheet('Routine giornaliera', `<div class="list">${rows}</div><button class="btn sec" style="margin-top:14px" data-a="editTask">＋ Aggiungi attività</button>`);
+};
+A.editTask = ({ id }) => {
+  const t = S.tasks.find(x => x.id === id) || { time: '12:00', title: '', emoji: '🐶', kind: 'other', active: true };
+  openSheet(id ? 'Modifica attività' : 'Nuova attività', `<form>${F.hidden('id', id || '')}
+    <div class="pair">${F.time('time', 'Orario', t.time)}${F.select('emoji', 'Icona', [['🍽️', '🍽️ Pappa'], ['🐾', '🐾 Passeggiata'], ['💧', '💧 Acqua'], ['💊', '💊 Farmaco'], ['🦴', '🦴 Snack'], ['🎾', '🎾 Gioco'], ['🛁', '🛁 Bagno'], ['🐶', '🐶 Altro']], t.emoji)}</div>
+    ${F.text('title', 'Nome', t.title, 'es. Pappa')}
+    ${F.select('kind', 'Tipo (per completarla in automatico quando registri)', [['meal', 'Pappa'], ['walk', 'Passeggiata'], ['water', 'Acqua'], ['medication', 'Farmaco'], ['other', 'Altro']], t.kind)}
+    ${F.check('active', 'Attiva', t.active)}${F.submit()}</form>`,
+    async d => {
+      const row = { time: d.time, title: d.title, emoji: d.emoji, kind: d.kind, active: d.active };
+      if (d.id) await q(T('daily_tasks').update(row).eq('id', d.id)); else await ins('daily_tasks', row);
+      closeSheet(); await refreshAll(); toast('Routine aggiornata');
+    });
+};
+A.delTask = ({ id }) => { if (confirm('Eliminare questa attività dalla routine?')) run(async () => { await q(T('daily_tasks').delete().eq('id', id)); closeSheet(); await refreshAll(); }, 'Eliminata'); };
+
+/* --- REGISTRA --- */
+A.register = () => openSheet('Cosa registriamo? 🐶', `<div class="grid">
+  <button class="tile" data-a="logMeal"><span>🍽️</span>Ha mangiato</button>
+  <button class="tile" data-a="logWalk"><span>🐾</span>Passeggiata</button>
+  <button class="tile" data-a="logWater"><span>💧</span>Ha bevuto</button>
+  <button class="tile" data-a="logPoo"><span>💩</span>Popò</button>
+  <button class="tile" data-a="logPee"><span>💧</span>Pipì</button>
+  <button class="tile" data-a="logVomit"><span>🤮</span>Vomito</button>
+  <button class="tile" data-a="logMed"><span>💊</span>Farmaco</button>
+  <button class="tile" data-a="logWeight"><span>⚖️</span>Peso</button>
+  <button class="tile" data-a="logNote"><span>📝</span>Nota</button>
+  <button class="tile" data-a="logPhoto"><span>📷</span>Foto</button>
+  </div>`);
+
+A.logMeal = () => {
+  const last = S.today.meals[S.today.meals.length - 1];
+  const food = (last && last.food) || S.dog.food || '';
+  openSheet('🍽️ Ha mangiato', `<form>
+    ${F.choices('eaten_pct', 'Quanto ha mangiato?', [['100', 'Tutto 😋'], ['50', 'Metà'], ['25', 'Poco'], ['0', 'Niente']], '100')}
+    <div class="pair">${F.num('planned_qty', 'Previsti (g)', last && last.planned_qty ? last.planned_qty : '')}${F.num('eaten_qty', 'Mangiati (g)', '', 'auto')}</div>
+    <div class="pair">${F.text('food', 'Alimento', food, 'es. crocchette')}${F.text('brand', 'Marca', (last && last.brand) || '')}</div>
+    ${F.dt('occurred_at', 'Quando')}${F.check('is_snack', '🦴 È uno snack')}${F.area('notes', 'Note')}${F.submit('Salva pasto')}</form>`,
+    async d => {
+      const planned = d.planned_qty ? Number(d.planned_qty) : null;
+      const eaten = d.eaten_qty ? Number(d.eaten_qty) : (planned != null ? Math.round(planned * Number(d.eaten_pct || 100) / 100) : null);
+      await ins('meals', { occurred_at: new Date(d.occurred_at).toISOString(), food: d.food || null, brand: d.brand || null, planned_qty: planned, eaten_qty: eaten, is_snack: d.is_snack, notes: d.notes || null });
+      if (!d.is_snack && isToday(d.occurred_at)) await autoCompleteKind('meal');
+      closeSheet(); await loadToday(); render(); toast('Pasto registrato 🍽️');
+    });
+};
+A.logWalk = () => {
+  if (S.activeWalk) return A.endWalk();
+  openSheet('🐾 Passeggiata', `<button class="btn blue" data-a="startWalk">▶ Inizia adesso (cronometro)</button>
+    <p class="muted small" style="margin:16px 0 4px">Oppure registra una passeggiata già fatta:</p>
+    <form>${F.dt('started_at', 'Inizio')}${F.num('duration_min', 'Durata (minuti)', '20')}
+    <div class="pair">${F.check('pee', '💧 Pipì', true)}${F.check('poo', '💩 Popò')}</div>${F.area('notes', 'Note')}${F.submit('Salva passeggiata')}</form>`,
+    async d => {
+      const st = new Date(d.started_at), dur = Number(d.duration_min) || 0;
+      await ins('walks', { started_at: st.toISOString(), ended_at: new Date(st.getTime() + dur * 60000).toISOString(), duration_min: dur, pee: d.pee, poo: d.poo, notes: d.notes || null });
+      if (isToday(st)) await autoCompleteKind('walk');
+      closeSheet(); await loadToday(); render(); toast('Passeggiata registrata 🐾');
+    });
+};
+A.startWalk = () => run(async () => {
+  S.activeWalk = await ins('walks', { started_at: new Date().toISOString() });
+  closeSheet(); render();
+}, 'Buona passeggiata! 🐾');
+A.endWalk = () => {
+  const w = S.activeWalk; if (!w) return;
+  openSheet(`🐾 Fine passeggiata · ${minsBetween(w.started_at, new Date())} min`, `<form>
+    <div class="pair">${F.check('pee', '💧 Ha fatto pipì', true)}${F.check('poo', '💩 Ha fatto popò')}</div>
+    ${F.choices('stool', 'Com\'era la popò?', [['', 'niente'], ['normale', 'Normale'], ['morbida', 'Morbida'], ['diarrea', 'Diarrea'], ['strana', 'Strana']], '')}
+    ${F.area('notes', 'Note')}${F.submit('Termina passeggiata', 'blue')}</form>`,
+    async d => {
+      const end = new Date();
+      await q(T('walks').update({ ended_at: end.toISOString(), duration_min: minsBetween(w.started_at, end), pee: d.pee, poo: d.poo, notes: d.notes || null }).eq('id', w.id));
+      if (d.poo && d.stool) await ins('toilet_events', { kind: 'poo', stool: d.stool, notes: 'durante la passeggiata' });
+      await autoCompleteKind('walk');
+      S.activeWalk = null; closeSheet(); await loadToday(); render(); toast('Passeggiata terminata ✓');
+    });
+};
+A.logWater = () => openSheet('💧 Ha bevuto', `<form><div class="grid three" data-choices="amount" data-multi="0" data-autosubmit="1">
+    <button type="button" class="tile" data-val="poco"><span>💧</span>Poco</button><button type="button" class="tile" data-val="normale"><span>💧💧</span>Normale</button><button type="button" class="tile" data-val="tanto"><span>💧💧💧</span>Tanto</button></div>${F.hidden('amount', '')}</form>`,
+  async d => { await ins('health_events', { category: 'water', title: 'Ha bevuto', details: { amount: d.amount } }); await autoCompleteKind('water'); closeSheet(); await loadToday(); render(); toast('Registrato 💧'); });
+A.logPoo = () => openSheet('💩 Popò', `<form><div class="grid" data-choices="stool" data-multi="0" data-autosubmit="1">
+    <button type="button" class="tile" data-val="normale"><span>👍</span>Normale</button><button type="button" class="tile" data-val="morbida"><span>🫠</span>Morbida</button>
+    <button type="button" class="tile" data-val="diarrea"><span>💦</span>Diarrea</button><button type="button" class="tile" data-val="strana"><span>🤔</span>Strana</button></div>${F.hidden('stool', '')}</form>`,
+  async d => { await ins('toilet_events', { kind: 'poo', stool: d.stool }); closeSheet(); await loadToday(); render(); toast('Popò registrata 💩'); });
+A.logPee = () => run(async () => { await ins('toilet_events', { kind: 'pee' }); closeSheet(); await loadToday(); render(); }, 'Pipì registrata 💧');
+A.logVomit = () => openSheet('🤮 Vomito', `<form>${F.num('episodes', 'Quanti episodi?', '1')}${F.dt('occurred_at', 'Quando')}${F.area('notes', 'Com\'era? Note')}${F.submit('Salva')}</form>`,
+  async d => { await ins('health_events', { category: 'vomit', title: 'Vomito', occurred_at: new Date(d.occurred_at).toISOString(), details: { episodes: d.episodes }, notes: d.notes || null }); closeSheet(); await loadToday(); render(); toast('Registrato'); });
+A.logMed = () => {
+  const opts = S.meds.filter(m => m.active).map(m => [m.id, `${m.name}${m.dose ? ' · ' + m.dose : ''}`]);
+  openSheet('💊 Farmaco dato', `<form>${opts.length ? F.select('med_id', 'Quale farmaco?', [...opts, ['', 'Altro (scrivi sotto)']]) : ''}
+    ${F.text('name', 'Nome farmaco', '', 'es. antibiotico')}${F.text('dose', 'Dose', '', 'es. 1 compressa')}${F.dt('occurred_at', 'Quando')}${F.area('notes', 'Note')}${F.submit('Salva')}</form>`,
+    async d => {
+      const med = S.meds.find(m => m.id === d.med_id);
+      const name = med ? med.name : d.name; if (!name) throw new Error('Scrivi il nome del farmaco');
+      await ins('health_events', { category: 'medication_given', title: `💊 ${name}`, occurred_at: new Date(d.occurred_at).toISOString(), details: { dose: d.dose || (med && med.dose) || '' }, notes: d.notes || null });
+      if (med) await q(T('medications').update({ last_given: ymd(d.occurred_at) }).eq('id', med.id));
+      await autoCompleteKind('medication');
+      closeSheet(); await refreshAll(); toast('Farmaco registrato 💊');
+    });
+};
+A.logWeight = () => openSheet('⚖️ Peso', `<form>${F.num('weight_kg', 'Peso (kg)', S.dog.weight_kg || '')}${F.dt('measured_at', 'Quando')}${F.area('notes', 'Note')}${F.submit('Salva peso')}</form>`,
+  async d => {
+    if (!d.weight_kg) throw new Error('Inserisci il peso');
+    await ins('weight_history', { weight_kg: Number(d.weight_kg), measured_at: new Date(d.measured_at).toISOString(), notes: d.notes || null });
+    await q(T('dogs').update({ weight_kg: Number(d.weight_kg) }).eq('id', S.dog.id));
+    closeSheet(); await refreshAll(); toast('Peso salvato ⚖️');
+  });
+A.logNote = () => openSheet('📝 Nota', `<form>${F.area('text', 'Cosa vuoi annotare?', '', 'es. oggi molto vivace al parco')}${F.dt('occurred_at', 'Quando')}${F.submit('Salva nota')}</form>`,
+  async d => { if (!d.text) return; await ins('notes', { text: d.text, occurred_at: new Date(d.occurred_at).toISOString() }); closeSheet(); await loadToday(); render(); toast('Nota salvata 📝'); });
+A.logPhoto = () => openSheet('📷 Foto', `<form>${F.file('file', 'Scegli o scatta una foto')}${F.area('text', 'Didascalia')}${F.submit('Salva foto')}</form>`,
+  async d => { const f = d.file; if (!f || !f.size) throw new Error('Scegli una foto'); const p = await upload(f, 'photos'); await ins('notes', { text: d.text || null, photo_path: p }); closeSheet(); await loadToday(); render(); toast('Foto salvata 📷'); });
+
+/* --- KELLY NON STA BENE --- */
+A.sick = () => openSheet(`🚨 ${esc(dogName())} non sta bene`, `<p class="muted small">Registra i sintomi per raccontarli bene al veterinario. L'app non fa diagnosi: se sei preoccupato, chiama subito il veterinario.</p>
+  ${S.vets[0] && S.vets[0].phone ? `<a class="btn green sm" style="margin-top:10px" href="tel:${esc(S.vets[0].phone.replace(/\s/g, ''))}">📞 Chiama ${esc(S.vets[0].name)}</a>` : ''}
+  <form>${F.choices('symptoms', 'Sintomi (anche più di uno)', SYMPTOMS, '', true)}
+  <div class="pair">${F.dt('occurred_at', 'Da quando')}${F.num('episodes', 'Episodi', '1')}</div>
+  <div class="pair">${F.text('last_meal', 'Ultimo pasto', '', 'es. 8:00, tutto')}${F.select('water', 'Acqua', [['normale', 'Beve normale'], ['tanto', 'Beve tanto'], ['poco', 'Beve poco'], ['no', 'Non beve']])}</div>
+  ${F.select('behavior', 'Comportamento', [['normale', 'Normale'], ['abbattuta', 'Abbattuta / poco attiva'], ['agitata', 'Agitata'], ['dolorante', 'Sembra avere dolore']])}
+  ${F.area('notes', 'Note')}${F.file('file', 'Foto (opzionale)')}${F.submit('Salva segnalazione', 'red')}</form>`,
+  async d => {
+    let p = null; if (d.file && d.file.size) p = await upload(d.file, 'health');
+    await ins('health_events', { category: 'sick', title: '🚨 Non sta bene', occurred_at: new Date(d.occurred_at).toISOString(), details: { symptoms: d.symptoms, episodes: d.episodes, last_meal: d.last_meal, water: d.water, behavior: d.behavior }, notes: d.notes || null, attachment_path: p });
+    closeSheet(); await refreshAll(); toast('Segnalazione salvata');
+  });
+
+/* --- schede salute --- */
+A.healthCat = ({ k }) => {
+  const c = HCATS[k];
+  let list = '', addBtn = '';
+  if (k === 'weight') {
+    list = S.weights.map(w => `<div class="ev"><div class="e">⚖️</div><div class="b"><b>${w.weight_kg} kg</b><div class="sub">${fmtDateFull(w.measured_at)} · ${esc(who(w.created_by))}${w.notes ? ' · ' + esc(w.notes) : ''}</div></div><button class="del" data-a="delRow" data-tb="weight_history" data-id="${w.id}">🗑</button></div>`).join('');
+    addBtn = `<button class="btn" data-a="logWeight">＋ Nuovo peso</button>`;
+  } else if (k === 'vaccine') {
+    list = S.vaccs.map(v => `<div class="ev"><div class="e">💉</div><div class="b"><b>${esc(v.name)}</b><div class="sub">fatto: ${v.given_on ? fmtDateFull(v.given_on) : '—'}${v.next_due ? ` · prossimo: ${fmtDateFull(v.next_due)} (${dueLabel(v.next_due)})` : ''}${v.notes ? ' · ' + esc(v.notes) : ''}</div>${v.attachment_path ? `<button class="btn sm sec" style="margin-top:8px" data-a="openDoc" data-p="${esc(v.attachment_path)}">📎 Allegato</button>` : ''}</div><button class="undo" data-a="editVacc" data-id="${v.id}">✏️</button><button class="del" data-a="delRow" data-tb="vaccinations" data-id="${v.id}">🗑</button></div>`).join('');
+    addBtn = `<button class="btn" data-a="editVacc">＋ Nuovo vaccino</button>`;
+  } else if (k === 'medication') {
+    list = S.meds.map(m => `<div class="ev"><div class="e">${m.active ? '💊' : '⏸️'}</div><div class="b"><b>${esc(m.name)}${m.dose ? ' · ' + esc(m.dose) : ''}</b><div class="sub">${esc([m.schedule, m.last_given ? 'ultimo: ' + fmtDateFull(m.last_given) : '', m.next_due ? 'prossimo: ' + fmtDateFull(m.next_due) + ' (' + dueLabel(m.next_due) + ')' : '', m.notes].filter(Boolean).join(' · '))}</div></div><button class="undo" data-a="editMed" data-id="${m.id}">✏️</button><button class="del" data-a="delRow" data-tb="medications" data-id="${m.id}">🗑</button></div>`).join('');
+    addBtn = `<div class="row"><button class="btn" data-a="editMed">＋ Nuovo farmaco</button><button class="btn sec" data-a="logMed">💊 Dato ora</button></div>`;
+  } else {
+    list = S.healthAll.filter(h => h.category === k).map(h => `<div class="ev"><div class="e">${c.e}</div><div class="b"><b>${esc(h.title || c.n)}</b><div class="sub">${fmtDateFull(h.occurred_at)}${h.next_due ? ` · prossimo: ${fmtDateFull(h.next_due)} (${dueLabel(h.next_due)})` : ''}${h.notes ? ' · ' + esc(h.notes) : ''} · ${esc(who(h.created_by))}</div>${h.attachment_path ? `<button class="btn sm sec" style="margin-top:8px" data-a="openDoc" data-p="${esc(h.attachment_path)}">📎 Allegato</button>` : ''}</div><button class="del" data-a="delRow" data-tb="health_events" data-id="${h.id}">🗑</button></div>`).join('');
+    addBtn = `<button class="btn" data-a="addHealth" data-k="${k}">＋ Registra ${c.n.toLowerCase()}</button>`;
+  }
+  openSheet(`${c.e} ${c.n}`, `${addBtn}<div style="margin-top:14px">${list || '<div class="empty small">Nessun dato ancora.</div>'}</div>`);
+};
+A.addHealth = ({ k }) => {
+  const c = HCATS[k];
+  openSheet(`${c.e} ${c.n}`, `<form>${F.text('title', 'Cosa', '', `es. ${k === 'antiparasite' ? 'pipetta Frontline' : k === 'vet' ? 'visita di controllo' : k === 'grooming' ? 'taglio e bagno' : 'controllo'}`)}
+    <div class="pair">${F.date('occurred_at', 'Fatto il', ymd())}${F.date('next_due', 'Prossima scadenza')}</div>${F.area('notes', 'Note')}${F.file('file', 'Allegato (foto/PDF)', 'image/*,application/pdf')}${F.submit()}</form>`,
+    async d => {
+      let p = null; if (d.file && d.file.size) p = await upload(d.file, k);
+      await ins('health_events', { category: k, title: d.title || c.n, occurred_at: new Date(d.occurred_at + 'T12:00').toISOString(), next_due: d.next_due || null, notes: d.notes || null, attachment_path: p });
+      closeSheet(); await refreshAll(); toast('Salvato ✓');
+    });
+};
+A.editVacc = ({ id }) => {
+  const v = S.vaccs.find(x => x.id === id) || {};
+  openSheet('💉 Vaccino', `<form>${F.hidden('id', id || '')}${F.text('name', 'Vaccino', v.name || '', 'es. Esavalente, Rabbia, Leishmania')}
+    <div class="pair">${F.date('given_on', 'Fatto il', v.given_on || ymd())}${F.date('next_due', 'Richiamo', v.next_due || '')}</div>${F.area('notes', 'Note', v.notes || '')}${F.file('file', 'Allegato (foto/PDF)', 'image/*,application/pdf')}${F.submit()}</form>`,
+    async d => {
+      const row = { name: d.name, given_on: d.given_on || null, next_due: d.next_due || null, notes: d.notes || null };
+      if (d.file && d.file.size) row.attachment_path = await upload(d.file, 'vaccines');
+      if (d.id) await q(T('vaccinations').update(row).eq('id', d.id)); else await ins('vaccinations', row);
+      closeSheet(); await refreshAll(); toast('Vaccino salvato 💉');
+    });
+};
+A.editMed = ({ id }) => {
+  const m = S.meds.find(x => x.id === id) || { active: true };
+  openSheet('💊 Farmaco', `<form>${F.hidden('id', id || '')}${F.text('name', 'Nome', m.name || '')}<div class="pair">${F.text('dose', 'Dose', m.dose || '', 'es. 1 compressa')}${F.text('schedule', 'Quando', m.schedule || '', 'es. ogni sera')}</div>
+    <div class="pair">${F.date('last_given', 'Ultima volta', m.last_given || '')}${F.date('next_due', 'Prossima volta', m.next_due || '')}</div>${F.area('notes', 'Note', m.notes || '')}${F.check('active', 'In corso', m.active)}${F.submit()}</form>`,
+    async d => {
+      const row = { name: d.name, dose: d.dose || null, schedule: d.schedule || null, last_given: d.last_given || null, next_due: d.next_due || null, notes: d.notes || null, active: d.active };
+      if (d.id) await q(T('medications').update(row).eq('id', d.id)); else await ins('medications', row);
+      closeSheet(); await refreshAll(); toast('Farmaco salvato 💊');
+    });
+};
+
+/* --- veterinario / documenti / appuntamenti --- */
+A.editVet = ({ id }) => {
+  const v = S.vets.find(x => x.id === id) || {};
+  openSheet('🩺 Veterinario', `<form>${F.hidden('id', id || '')}${F.text('name', 'Nome', v.name || '', 'es. Dott.ssa Rossi')}${F.text('clinic', 'Clinica', v.clinic || '')}
+    ${F.text('phone', 'Telefono', v.phone || '')}${F.text('address', 'Indirizzo', v.address || '', 'via, città')}${F.area('notes', 'Note / orari', v.notes || '')}
+    ${F.check('is_emergency', '🚑 Pronto soccorso / emergenze', v.is_emergency)}${F.submit()}${id ? `<button type="button" class="btn ghost" data-a="delRow" data-tb="vets" data-id="${id}">Elimina</button>` : ''}</form>`,
+    async d => {
+      const row = { name: d.name, clinic: d.clinic || null, phone: d.phone || null, address: d.address || null, notes: d.notes || null, is_emergency: d.is_emergency };
+      if (d.id) await q(T('vets').update(row).eq('id', d.id)); else await q(T('vets').insert({ dog_id: S.dog.id, ...row }));
+      closeSheet(); await refreshAll(); toast('Veterinario salvato');
+    });
+};
+A.addDoc = () => openSheet('📁 Carica documento', `<form>${F.text('title', 'Titolo', '', 'es. Libretto sanitario')}${F.select('category', 'Tipo', [['libretto', 'Libretto sanitario'], ['vaccini', 'Vaccini'], ['analisi', 'Analisi'], ['ricetta', 'Ricetta'], ['referto', 'Referto'], ['microchip', 'Microchip'], ['altro', 'Altro']])}
+  ${F.file('file', 'File (PDF o immagine)', 'image/*,application/pdf')}${F.submit('Carica')}</form>`,
+  async d => { const f = d.file; if (!f || !f.size) throw new Error('Scegli un file'); const p = await upload(f, 'documents'); await ins('documents', { title: d.title || f.name, category: d.category, storage_path: p, mime: f.type }); closeSheet(); await A.nav({ v: 'health' }); toast('Documento caricato 📁'); });
+A.openDoc = async ({ p }) => { const u = await signed(p); if (u) window.open(u, '_blank'); else toast('File non trovato', true); };
+A.delDoc = ({ id, p }) => { if (confirm('Eliminare il documento?')) run(async () => { await sb.storage.from(BUCKET).remove([p]); await q(T('documents').delete().eq('id', id)); await A.nav({ v: 'health' }); }, 'Eliminato'); };
+A.addAppt = ({ d }) => openSheet('📅 Appuntamento', `<form>${F.text('title', 'Cosa', '', 'es. Visita veterinaria')}${F.select('category', 'Tipo', [['vet', '🩺 Veterinario'], ['grooming', '✂️ Toelettatura'], ['other', '📅 Altro']])}
+  ${F.dt('starts_at', 'Quando', (d || ymd()) + 'T10:00')}${F.text('location', 'Dove')}${F.area('notes', 'Note')}${F.submit()}</form>`,
+  async x => { await ins('appointments', { title: x.title, category: x.category, starts_at: new Date(x.starts_at).toISOString(), location: x.location || null, notes: x.notes || null }); closeSheet(); await refreshAll(); toast('Appuntamento salvato 📅'); });
+A.delRow = ({ tb, id }) => { if (confirm('Eliminare?')) run(async () => { await q(T(tb).delete().eq('id', id)); closeSheet(); await refreshAll(); }, 'Eliminato'); };
+
+/* --- profilo, foto, nome, promemoria --- */
+A.dogPhoto = () => openSheet('📷 Foto di ' + esc(dogName()), `<form>${F.file('file', 'Scegli o scatta la foto')}${F.submit('Salva foto')}</form>`,
+  async d => { const f = d.file; if (!f || !f.size) throw new Error('Scegli una foto'); const p = await upload(f, 'profile'); await q(T('dogs').update({ photo_path: p }).eq('id', S.dog.id)); delete urlCache[p]; closeSheet(); await refreshAll(); toast('Che bella! 🐶'); });
+A.editDog = () => {
+  const d = S.dog;
+  openSheet('Profilo di ' + esc(d.name), `<form>${F.text('name', 'Nome', d.name)}${F.text('breed', 'Razza', d.breed || '')}
+    <div class="pair">${F.select('sex', 'Sesso', [['F', 'Femmina'], ['M', 'Maschio']], d.sex || 'F')}${F.date('birth_date', 'Data di nascita', d.birth_date || '')}</div>
+    <div class="pair">${F.num('weight_kg', 'Peso (kg)', d.weight_kg || '')}${F.text('microchip', 'Microchip', d.microchip || '')}</div>
+    ${F.check('neutered', 'Sterilizzata', d.neutered)}${F.text('food', 'Alimentazione', d.food || '')}${F.text('allergies', 'Allergie / intolleranze', d.allergies || '')}${F.area('notes', 'Note', d.notes || '')}${F.submit()}</form>`,
+    async x => {
+      await q(T('dogs').update({ name: x.name || 'Kelly', breed: x.breed || null, sex: x.sex, birth_date: x.birth_date || null, weight_kg: x.weight_kg || null, microchip: x.microchip || null, neutered: x.neutered, food: x.food || null, allergies: x.allergies || null, notes: x.notes || null }).eq('id', S.dog.id));
+      closeSheet(); await refreshAll(); toast('Profilo aggiornato');
+    });
+};
+A.editMe = () => openSheet('Il tuo nome', `<form>${F.text('name', 'Nome', S.profile.display_name || '')}${F.submit()}</form>`,
+  async d => { await q(T('profiles').update({ display_name: d.name }).eq('id', S.user.id)); closeSheet(); await refreshAll(); toast('Nome aggiornato'); });
+A.editRem = ({ id }) => {
+  const r = S.reminders.find(x => x.id === id) || { title: '', time: '08:00', days: [1, 2, 3, 4, 5, 6, 7], active: true, category: 'other' };
+  openSheet('🔔 Promemoria', `<form>${F.hidden('id', id || '')}${F.text('title', 'Messaggio', r.title, `es. 🐶 È ora della pappa di ${dogName()}!`)}${F.time('time', 'Orario', r.time)}
+    ${F.choices('days', 'Giorni', [['1', 'lun'], ['2', 'mar'], ['3', 'mer'], ['4', 'gio'], ['5', 'ven'], ['6', 'sab'], ['7', 'dom']], (r.days || []).join(','), true)}
+    ${F.check('active', 'Attivo', r.active)}${F.submit()}${id ? `<button type="button" class="btn ghost" data-a="delRow" data-tb="reminders" data-id="${id}">Elimina</button>` : ''}</form>`,
+    async d => {
+      const row = { title: d.title, time: d.time, days: d.days ? d.days.split(',').map(Number) : [1, 2, 3, 4, 5, 6, 7], active: d.active };
+      if (d.id) await q(T('reminders').update(row).eq('id', d.id)); else await ins('reminders', row);
+      closeSheet(); await refreshAll(); toast('Promemoria salvato 🔔');
+    });
+};
+A.toggleRem = ({ id, on }) => run(async () => { await q(T('reminders').update({ active: on !== '1' }).eq('id', id)); await refreshAll(); });
+A.enableNotif = async () => {
+  if (!('Notification' in window)) return toast('Notifiche non supportate qui', true);
+  const p = await Notification.requestPermission();
+  if (p === 'granted') { notify(`🐶 Notifiche attive per ${dogName()}!`); render(); } else toast('Permesso non concesso', true);
+};
+
+/* ============================================================
+   NOTIFICHE / PROMEMORIA
+   ============================================================ */
+async function notify(text) {
+  if (!('Notification' in window) || Notification.permission !== 'granted') { toast(text); return; }
+  try {
+    const reg = await navigator.serviceWorker.getRegistration();
+    if (reg && reg.showNotification) await reg.showNotification('Kelly Care', { body: text, tag: 'kc-' + text });
+    else new Notification('Kelly Care', { body: text, });
+  } catch { toast(text); }
+}
+function checkReminders() {
+  if (!S.dog) return;
+  const now = new Date(), hm = `${pad(now.getHours())}:${pad(now.getMinutes())}`, dow = now.getDay() === 0 ? 7 : now.getDay();
+  S.reminders.filter(r => r.active && r.time === hm && (!r.days || !r.days.length || r.days.includes(dow))).forEach(r => {
+    const key = `kc_fired_${r.id}_${ymd()}`;
+    if (localStorage.getItem(key)) return;
+    localStorage.setItem(key, '1'); notify(r.title);
+  });
+  // scadenze di oggi (una volta al giorno all'apertura)
+  const dkey = `kc_due_${ymd()}`;
+  if (!localStorage.getItem(dkey)) { const b = dueBanners(); if (b.length) { localStorage.setItem(dkey, '1'); b.slice(0, 3).forEach(notify); } }
+  // pulizia chiavi vecchie
+  Object.keys(localStorage).filter(k => (k.startsWith('kc_fired_') || k.startsWith('kc_due_')) && !k.endsWith(ymd())).forEach(k => localStorage.removeItem(k));
+}
+
+</script>
+</body>
+</html>
